@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>The s2m Blocks - s2m</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The s2m Blocks";
+    var mkdocs_page_input_path = "blocks.md";
+    var mkdocs_page_url = "/blocks/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> s2m</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">The s2m User's Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../install/">Installation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../usage/">Using s2m</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">The s2m Blocks</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#the-s2m-blocks">The s2m Blocks</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#display">Display</a></li>
+        
+            <li><a class="toctree-l3" href="#scroll-text">Scroll Text</a></li>
+        
+            <li><a class="toctree-l3" href="#write-pixel">Write Pixel</a></li>
+        
+            <li><a class="toctree-l3" href="#clear-display">Clear Display</a></li>
+        
+            <li><a class="toctree-l3" href="#digital-write">Digital Write</a></li>
+        
+            <li><a class="toctree-l3" href="#analog-write">Analog Write</a></li>
+        
+            <li><a class="toctree-l3" href="#button-pressed">Button Pressed</a></li>
+        
+            <li><a class="toctree-l3" href="#tilt">Tilt</a></li>
+        
+            <li><a class="toctree-l3" href="#shaken">Shaken</a></li>
+        
+            <li><a class="toctree-l3" href="#read-digital">Read Digital</a></li>
+        
+            <li><a class="toctree-l3" href="#read-analog">Read Analog</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../s2m/">How s2m Works</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">s2m</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>The s2m Blocks</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="the-s2m-blocks">The s2m Blocks</h1>
+<p>This section describes the custom Scratch blocks added to the More Blocks section
+ in the Scratch editor.</p>
+<h2 id="display">Display</h2>
+<p>This command block allows you to select and display an image on the micro:bit LED display.</p>
+<p><img align="center" src="../images/display_block.png"></p>
+<h2 id="scroll-text">Scroll Text</h2>
+<p>This command block allows you to enter text that will be scrolled across the LED display.</p>
+<p><img align="center" src="../images/scroll_block.png"></p>
+<h2 id="write-pixel">Write Pixel</h2>
+<p>This command block allows you to control each individual pixel on the LED display. A pixel is chosen
+by specifying its x or horizontal position, y or vertical position, and its intensity or brightness.</p>
+<p>An x value of 0 is the left most column and 4 is the right most.</p>
+<p>A y value of 0 is top row and 4 is the bottom row.</p>
+<p>An intensity value of 0 is the lowest level and 9 is the highest.</p>
+<p><img align="center" src="../images/write_pixel_block.png"></p>
+<h2 id="clear-display">Clear Display</h2>
+<p>This command block will immediately turn all LED pixels off.</p>
+<p><img align="center" src="../images/clear_display_block.png"></p>
+<h2 id="digital-write">Digital Write</h2>
+<p>This command block allows you to set pins 0, 1, or 2 to a value of 0 or 1.</p>
+<p><img align="center" src="../images/digital_write_block.png"></p>
+<h2 id="analog-write">Analog Write</h2>
+<p>This command block allows you to set pins 0, 1, or 2 to a value of 0 to 1023.</p>
+<p><img align="center" src="../images/analog_write_block.png"></p>
+<h2 id="button-pressed">Button Pressed</h2>
+<p>These binary reporter blocks report if their associated button is pressed or not. They return a value
+of "true" if pressed and "false" if not.</p>
+<p><img align="center" src="../images/button_blocks.png"></p>
+<h2 id="tilt">Tilt</h2>
+<p>These binary reporter blocks report if the micro:bit board is tilted in a given direction.
+They return a value of "true" if tilted and "false" if not.</p>
+<p>The micro:bit is held so that the USB connector is at the top in order for the tilt directions to
+track correctly.</p>
+<p><img align="center" src="../images/tilted_blocks.png"></p>
+<h2 id="shaken">Shaken</h2>
+<p>This binary reporter block reports if the micro:bit has been shaken. It returns a value of "true" if
+it has been, and "false" if not.</p>
+<p><img align="center" src="../images/shaken_block.png"></p>
+<h2 id="read-digital">Read Digital</h2>
+<p>This reporter block returns the current digital value for pins 0, 1, or 2. Either a value of 0 or
+1 is returned.</p>
+<p><img align="center" src="../images/digital_read_block.png"></p>
+<h2 id="read-analog">Read Analog</h2>
+<p>This reporter block returns the current analog value for pins 0, 1, or 2. A value between 0 and 
+ 1024 is returned.</p>
+<p><img align="center" src="../images/analog_read_block.png"></p>
+<h3 id="important-note-when-you-press-the-red-stop-button-in-the-scratch-editor-digital-and-anlog-outputs-for-pins-0-1-and-2-will-be-set-to-0-and-the-led-display-will-be-cleared">IMPORTANT NOTE: When you press the Red Stop Button in the Scratch Editor, digital and anlog outputs for pins 0, 1, and 2 will be set to 0, and the LED display will be cleared.</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../s2m/" class="btn btn-neutral float-right" title="How s2m Works">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../usage/" class="btn btn-neutral" title="Using s2m"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../usage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../s2m/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

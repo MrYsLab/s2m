@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Installation - s2m</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Installation";
+    var mkdocs_page_input_path = "install.md";
+    var mkdocs_page_url = "/install/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> s2m</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">The s2m User's Guide</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Installation</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#installation">Installation</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#installing-the-scratch-2-off-line-editor-on-your-computer">Installing the Scratch 2 Off-Line Editor on Your Computer</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-python">Installing Python</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-the-mu-editor">Installing the mu Editor</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-the-s2m-microbit-script-on-the-microbit">Installing the  s2m micro:bit Script On The micro:bit</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-s2m">Installing s2m</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../usage/">Using s2m</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blocks/">The s2m Blocks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../s2m/">How s2m Works</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">s2m</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Installation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="installation">Installation</h1>
+<p>This section will explain how to:</p>
+<ul>
+<li>Install Scratch 2 on your computer</li>
+<li>Install Python on your computer</li>
+<li>Install the micro:bit mu editor</li>
+<li>Install the <strong><em>s2m</em></strong> script on to the micro:bit using the mu editor</li>
+<li>Install the <strong><em>s2m</em></strong> software on your computer</li>
+</ul>
+<h2 id="installing-the-scratch-2-off-line-editor-on-your-computer">Installing the Scratch 2 Off-Line Editor on Your Computer</h2>
+<p>Go to the <a href="https://scratch.mit.edu/download">Scratch download page</a> and follow the instructions
+to install Scratch on your computer.</p>
+<h3 id="special-note-for-raspberry-pi-users">Special Note For Raspberry Pi Users</h3>
+<p>If you are using a Raspberry Pi with the Stretch version of Raspbian installed, Scratch 2 comes
+pre-installed, as well as both Python 2 and Python 3, so you may skip to the section on <a href="#installing-the-mu-editor">installing the mu Editor</a>.</p>
+<p><img align="center" src="../images/scratch1.png"></p>
+<h2 id="installing-python">Installing Python</h2>
+<p><strong><em>s2m</em></strong> is compatible with Python versions 2 (2.7 or greater) and 3 (3.4 or greater).
+If you already have Python installed on your computer, you can skip to the next step, 
+<a href="#installing-the-mu-editor">Installing the mu Editor</a>.</p>
+<p>To check if you have Python installed, open a command or terminal window and type</p>
+<pre><code>python
+</code></pre>
+
+<p>If Python is already installed, you will see something similar to this:</p>
+<p><img align="center" src="../images/python3.png"></p>
+<p>To install Python, go to the <a href="https://www.python.org/">Python web site</a> and select <em>Downloads</em> 
+and the appropriate version for your computer.</p>
+<p><img align="center" src="../images/python1.png"></p>
+<p>If you are installing on Windows, make sure to select both check boxes at the bottom of the 
+installation dialog box.</p>
+<p><img align="center" src="../images/python2.png"></p>
+<h2 id="installing-the-mu-editor">Installing the mu Editor</h2>
+<p>Go to the <a href="https://codewith.mu/">mu editor download page</a> and download and install the editor
+for your system.</p>
+<p><img align="center" src="../images/mu1.png"></p>
+<h2 id="installing-the-s2m-microbit-script-on-the-microbit">Installing the  <strong><em>s2m</em></strong> micro:bit Script On The micro:bit</h2>
+<p>Plug your micro:bit into a USB port on your computer. Start the mu editor and then paste this script into the editor.
+You may also find the script <a href="">here</a>.</p>
+<pre><code>&quot;&quot;&quot;
+ Copyright (c) 2017 Alan Yorinks All rights reserved.
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+ Version 3 as published by the Free Software Foundation; either
+ or (at your option) any later version.
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+
+ You should have received a copy of the GNU AFFERO GENERAL PUBLIC LICENSE
+ along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+ Last modified 17 November 2017
+&quot;&quot;&quot;
+
+from microbit import *
+
+# This is a script used to control a micro:bit from s2m
+
+# This loop continuously polls the sensors and then prints a reply string.
+# It also continuously calls readline to check for commands.
+# A command is specified as comma delimited string with the command
+# as the first element followed by its parameters.
+
+# Commands:
+#   d - display the specified image
+#   s - scroll the specified text
+#   p - control a pixel for the specified row, column and intensity
+#   c - clear the display (no parameters)
+#   a - analog write for the specified pin and value (range 0-1023)
+#   t - digital write for the specified pin and value (0 or 1)
+
+while True:
+    data = uart.readline()
+    if data:
+        cmd = str(data, 'utf-8').rstrip()
+        if not len(cmd):
+            continue
+        # noinspection PyUnresolvedReferences
+        cmd_list = cmd.split(&quot;,&quot;)
+        # get command id
+
+        try:
+            cmd_id = cmd_list[0]
+        except IndexError:
+            cmd_id = 'z'
+            continue
+
+        # display image command
+        if cmd_id == 'd':
+            image_dict = {&quot;HAPPY&quot;: Image.HAPPY,
+                          &quot;SAD&quot;: Image.SAD,
+                          &quot;ANGRY&quot;: Image.ANGRY,
+                          &quot;SMILE&quot;: Image.SMILE,
+                          &quot;CONFUSED&quot;: Image.CONFUSED,
+                          &quot;ASLEEP&quot;: Image.ASLEEP,
+                          &quot;SURPRISED&quot;: Image.SURPRISED,
+                          &quot;SILLY&quot;: Image.SILLY,
+                          &quot;FABULOUS&quot;: Image.FABULOUS,
+                          &quot;MEH&quot;: Image.MEH,
+                          &quot;YES&quot;: Image.YES,
+                          &quot;NO&quot;: Image.NO,
+                          &quot;RABBIT&quot;: Image.RABBIT,
+                          &quot;COW&quot;: Image.COW,
+                          &quot;ROLLERSKATE&quot;: Image.ROLLERSKATE,
+                          &quot;HOUSE&quot;: Image.HOUSE,
+                          &quot;SNAKE&quot;: Image.SNAKE,
+                          &quot;HEART&quot;: Image.HEART,
+                          &quot;DIAMOND&quot;: Image.DIAMOND,
+                          &quot;DIAMOND_SMALL&quot;: Image.DIAMOND_SMALL,
+                          &quot;SQUARE&quot;: Image.SQUARE,
+                          &quot;SQUARE_SMALL&quot;: Image.SQUARE_SMALL,
+                          &quot;TRIANGLE&quot;: Image.TRIANGLE,
+                          &quot;TARGET&quot;: Image.TARGET,
+                          &quot;STICKFIGURE&quot;: Image.STICKFIGURE,
+                          &quot;ARROW_N&quot;: Image.ARROW_N,
+                          &quot;ARROW_NE&quot;: Image.ARROW_NE,
+                          &quot;ARROW_E&quot;: Image.ARROW_E,
+                          &quot;ARROW_SE&quot;: Image.ARROW_SE,
+                          &quot;ARROW_S&quot;: Image.ARROW_S,
+                          &quot;ARROW_SW&quot;: Image.ARROW_SW,
+                          &quot;ARROW_W&quot;: Image.ARROW_W,
+                          &quot;ARROW_NW&quot;: Image.ARROW_NW }
+
+            # get image key
+            # try:
+            image_key = cmd_list[1]
+            # except IndexError:
+            #     continue
+            if image_key in image_dict:
+                display.show(image_dict.get(image_key), wait=False)
+
+            # sleep(50)
+
+        # scroll text command
+        if cmd_id == 's':
+            display.scroll(cmd_list[1], wait=False)
+
+        # write pixel command
+        if cmd_id == 'p':
+            # get row, column and intensity value
+            # make sure values are within valid range
+            # print(cmd)
+            try:
+                x = int(cmd_list[1])
+                if x &lt; 0:
+                    x = 0
+                if x &gt; 4:
+                    x = 4
+                y = int(cmd_list[2])
+                if y &lt; 0:
+                    y = 0
+                if y &gt; 4:
+                    y = 4
+                value = int(cmd_list[3])
+                if value &lt; 0:
+                    value = 0
+                if value &gt; 9:
+                    value = 9
+                display.set_pixel(x, y, value)
+            except IndexError:
+                continue
+
+
+        # clear display command
+        if cmd_id == 'c':
+            display.clear()
+
+        # analog write command
+        # if values are out of range, command is ignored
+        if cmd_id == 'a':
+            # check pin and value ranges
+            try:
+                pin = int(cmd_list[1])
+                value = int(cmd_list[2])
+            except IndexError:
+                continue
+            except ValueError:
+                continue
+
+            if 0 &lt;= pin &lt; 2:
+                if 0 &lt;= value &lt; 1024:
+                    if pin == 0:
+                        pin0.write_analog(value)
+                    elif pin == 1:
+                        pin1.write_analog(value)
+                    elif pin == 2:
+                        pin2.write_analog(value)
+                    else:
+                        pass
+
+
+        # digital write command
+        if cmd_id == 't':
+            # check pin and value ranges
+            # if values are out of range, command is ignored
+
+            try:
+                pin = int(cmd_list[1])
+                value = int(cmd_list[2])
+            except IndexError:
+                continue
+            except ValueError:
+                continue
+
+            if 0 &lt;= pin &lt; 2:
+                if 0 &lt;= value &lt; 3:
+                    if pin == 0:
+                        pin0.write_digital(value)
+                    elif pin == 1:
+                        pin1.write_digital(value)
+                    elif pin == 2:
+                        pin2.write_digital(value)
+                else:
+                    pass
+
+
+
+
+        if cmd == 'g':
+            # This string will contain the sensor values and will
+            # be &quot;printed&quot; to the serial port.
+            # Fields are comma delimited
+            sensor_string = &quot;&quot;
+
+            # accelerometer
+            sensor_string += str(accelerometer.get_x()) + ','
+            sensor_string += str(accelerometer.get_y()) + ','
+            sensor_string += str(accelerometer.get_z()) + ','
+
+            # buttons
+            sensor_string += str(button_a.is_pressed()) + ','
+
+            sensor_string += str(button_b.is_pressed()) + ','
+
+            # get digital input pin values
+            sensor_string += str(pin0.read_digital()) + ','
+
+            sensor_string += str(pin1.read_digital()) + ','
+
+            sensor_string += str(pin2.read_digital()) + ','
+
+            # get analog input pin values
+            sensor_string += str(pin0.read_analog()) + ','
+
+            sensor_string += str(pin1.read_analog()) + ','
+
+            sensor_string += str(pin2.read_analog())
+
+            print(sensor_string)
+
+    sleep(30)
+</code></pre>
+
+<p>Flash the script onto the micro:bit by clicking on the Flash button in the editor.</p>
+<p><img align="center" src="../images/mu2.png"></p>
+<h2 id="installing-s2m">Installing <strong><em>s2m</em></strong></h2>
+<p>Open a command a command window and type:</p>
+<pre><code>pip install s2m
+</code></pre>
+
+<p>This will download and install the program. </p>
+<p>Now that all the software has been installed, go to the next section to start using s2m.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usage/" class="btn btn-neutral float-right" title="Using s2m">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="The s2m User's Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../usage/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

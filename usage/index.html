@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Using s2m - s2m</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using s2m";
+    var mkdocs_page_input_path = "usage.md";
+    var mkdocs_page_url = "/usage/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> s2m</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">The s2m User's Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../install/">Installation</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Using s2m</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#starting-s2m-on-windows-mac-and-linux">Starting s2m On Windows, Mac and Linux</a></li>
+    
+
+    <li class="toctree-l2"><a href="#starting-s2m-on-the-raspberry-pi">Starting s2m On The Raspberry Pi</a></li>
+    
+
+    <li class="toctree-l2"><a href="#command-line-options">Command Line Options</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#special-note-for-raspberry-pi-users">Special Note For Raspberry Pi Users</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#shutting-down">Shutting Down</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blocks/">The s2m Blocks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../s2m/">How s2m Works</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">s2m</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Using s2m</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="starting-s2m-on-windows-mac-and-linux">Starting <strong><em>s2m</em></strong> On Windows, Mac and Linux</h1>
+<p>Make sure that your micro:bit is plugged into a USB port on your computer.</p>
+<p>Next, open a command or terminal window and type:</p>
+<pre><code>s2m
+</code></pre>
+
+<p>The command window should display something similar to this:</p>
+<p><img align="center" src="../images/start_s2m.png"></p>
+<p>The program begins by announcing s2m's version number and thePython version in use.</p>
+<p>Next, s2m attempts to auto detect the communication port the micro:bit is connected to and announces
+the port found.</p>
+<p>It then launches Scratch and you should select the More Blocks tab to view the s2m blocks. </p>
+<p>When the connectivity indicator on the Scratch editor turns green, the program is ready to be used.</p>
+<p><img align="center" src="../images/launch.png"></p>
+<h1 id="starting-s2m-on-the-raspberry-pi">Starting <strong><em>s2m</em></strong> On The Raspberry Pi</h1>
+<p>Open a terminal window and type:</p>
+<pre><code>s2m -r true
+
+</code></pre>
+
+<p>See <a href="#starting-s2m">the previous section</a> for a description of the console output.</p>
+<p><img align="center" src="../images/rpi.png"></p>
+<h1 id="command-line-options">Command Line Options</h1>
+<p>Some program defaults can be overriden at startup using command line options.</p>
+<p><img align="center" src="../images/s2m_help.png"></p>
+<p>The <strong>BASE_PATH</strong> allows you to override where s2m looks for its files. The standard</p>
+<p><strong>BASE_PATH</strong> is the Python path printed when s2m first starts up.</p>
+<p>You may also display the BASE_PATH that is currently in use. If you select</p>
+<pre><code>s2m -d true
+</code></pre>
+
+<p>the <strong>BASE_PATH</strong> is shown and then s2m exits.</p>
+<p>If the <strong>CLIENT</strong> is set to no_client, Scratch will not automatically launch. This is mainly
+used for debugging.</p>
+<p><strong>COMPOR</strong>T allows you to manually specify which communications port the micro:bit is connected to.</p>
+<h3 id="special-note-for-raspberry-pi-users">Special Note For Raspberry Pi Users</h3>
+<p>You must set the -r option to "true" to allow s2m to lauch correctly. See the
+ <a href="#starting-s2m-on-the-raspberry-pi">previous section</a>.</p>
+<p><strong>SCRATCH_EXEC</strong> allows you to specify the full path and Scratch executable name if Scratch was not
+installed into the standard directory.</p>
+<h1 id="shutting-down">Shutting Down</h1>
+<p>Before shutting down, make sure to save your Scratch project. To shutdown, press <strong>Control-C</strong> in the command window.
+This will close both s2m and Scratch. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../blocks/" class="btn btn-neutral float-right" title="The s2m Blocks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../install/" class="btn btn-neutral" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../install/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../blocks/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
