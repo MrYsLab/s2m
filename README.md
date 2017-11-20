@@ -18,4 +18,4 @@ __MAJOR FEATURES__
 * It is a whole lot of fun to use!
 
 
-A User's Guide is avaialbe [here](https://mryslab.github.io/s2m/)
+A User's Guide is available [here](https://mryslab.github.io/s2m/)
