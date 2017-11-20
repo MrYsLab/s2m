@@ -22,4 +22,4 @@ __MAJOR FEATURES__
 
 A User's Guide is available [here](https://mryslab.github.io/s2m/)
 
-This project was developed with [Pycharm](https://www.jetbrains.com/pycharm/) ![pyc](https://raw.github.com/MrYsLab/s2m/master/images/icon_PyCharm.png)
+This project was developed with [Pycharm](https://www.jetbrains.com/pycharm/)![pyc](https://raw.github.com/MrYsLab/s2m/master/images/icon_PyCharm.png)
