@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='s2m',
-    version='1.00',
+    version='1.01',
     packages=['s2m'],
     install_requires=['pyserial>=2.7',
                       'psutil'],
@@ -14,8 +14,8 @@ setup(
             's2m = s2m.s2m:main'
         ]
     },
-    url='https://github.com/MrYsLab/s2aio/wiki',
-    download_url='https://github.com/MrYsLab/s2aio',
+    url='https://github.com/MrYsLab/s2m',
+    download_url='https://github.com/MrYsLab/s2m',
     license='GNU Affero General Public License v3 (AGPLv3+)',
     author='Alan Yorinks',
     author_email='MisterYsLab@gmail.com',
