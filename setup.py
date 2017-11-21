@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='s2m',
-    version='1.01',
+    version='1.02',
     packages=['s2m'],
     install_requires=['pyserial>=2.7',
                       'psutil'],
@@ -19,7 +19,7 @@ setup(
     license='GNU Affero General Public License v3 (AGPLv3+)',
     author='Alan Yorinks',
     author_email='MisterYsLab@gmail.com',
-    description='A Scratch 2.0 (Offline) Hardware Extension for Arduino',
+    description='A Scratch 2.0 (Offline) Hardware Extension for micro:bit',
     keywords=['micro:bit', 'microbit', 'Scratch'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

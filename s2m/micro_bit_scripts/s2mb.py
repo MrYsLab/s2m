@@ -36,6 +36,7 @@ from microbit import *
 
 while True:
     data = uart.readline()
+    sleep(50)
     if data:
         cmd = str(data, 'utf-8').rstrip()
         if not len(cmd):
@@ -84,7 +85,7 @@ while True:
                           "ARROW_S": Image.ARROW_S,
                           "ARROW_SW": Image.ARROW_SW,
                           "ARROW_W": Image.ARROW_W,
-                          "ARROW_NW": Image.ARROW_NW }
+                          "ARROW_NW": Image.ARROW_NW}
 
             # get image key
             # try:
@@ -107,23 +108,39 @@ while True:
             # print(cmd)
             try:
                 x = int(cmd_list[1])
-                if x < 0:
-                    x = 0
-                if x > 4:
-                    x = 4
-                y = int(cmd_list[2])
-                if y < 0:
-                    y = 0
-                if y > 4:
-                    y = 4
-                value = int(cmd_list[3])
-                if value < 0:
-                    value = 0
-                if value > 9:
-                    value = 9
-                display.set_pixel(x, y, value)
+            except ValueError:
+                continue
             except IndexError:
                 continue
+
+            if x < 0:
+                x = 0
+            if x > 4:
+                x = 4
+
+            try:
+                y = int(cmd_list[2])
+            except ValueError:
+                continue
+            except IndexError:
+                continue
+
+            if y < 0:
+                y = 0
+            if y > 4:
+                y = 4
+            try:
+                value = int(cmd_list[3])
+            except ValueError:
+                continue
+            except IndexError:
+                continue
+
+            if value < 0:
+                value = 0
+            if value > 9:
+                value = 9
+            display.set_pixel(x, y, value)
 
 
         # clear display command
@@ -213,4 +230,3 @@ while True:
 
             print(sensor_string)
 
-    sleep(30)
