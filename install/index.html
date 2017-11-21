@@ -179,7 +179,7 @@ You may also find the script <a href="">here</a>.</p>
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 17 November 2017
+ Last modified 21 November 2017
 &quot;&quot;&quot;
 
 from microbit import *
@@ -201,6 +201,7 @@ from microbit import *
 
 while True:
     data = uart.readline()
+    sleep(50)
     if data:
         cmd = str(data, 'utf-8').rstrip()
         if not len(cmd):
@@ -249,7 +250,7 @@ while True:
                           &quot;ARROW_S&quot;: Image.ARROW_S,
                           &quot;ARROW_SW&quot;: Image.ARROW_SW,
                           &quot;ARROW_W&quot;: Image.ARROW_W,
-                          &quot;ARROW_NW&quot;: Image.ARROW_NW }
+                          &quot;ARROW_NW&quot;: Image.ARROW_NW}
 
             # get image key
             # try:
@@ -272,23 +273,39 @@ while True:
             # print(cmd)
             try:
                 x = int(cmd_list[1])
-                if x &lt; 0:
-                    x = 0
-                if x &gt; 4:
-                    x = 4
-                y = int(cmd_list[2])
-                if y &lt; 0:
-                    y = 0
-                if y &gt; 4:
-                    y = 4
-                value = int(cmd_list[3])
-                if value &lt; 0:
-                    value = 0
-                if value &gt; 9:
-                    value = 9
-                display.set_pixel(x, y, value)
+            except ValueError:
+                continue
             except IndexError:
                 continue
+
+            if x &lt; 0:
+                x = 0
+            if x &gt; 4:
+                x = 4
+
+            try:
+                y = int(cmd_list[2])
+            except ValueError:
+                continue
+            except IndexError:
+                continue
+
+            if y &lt; 0:
+                y = 0
+            if y &gt; 4:
+                y = 4
+            try:
+                value = int(cmd_list[3])
+            except ValueError:
+                continue
+            except IndexError:
+                continue
+
+            if value &lt; 0:
+                value = 0
+            if value &gt; 9:
+                value = 9
+            display.set_pixel(x, y, value)
 
 
         # clear display command
@@ -378,7 +395,7 @@ while True:
 
             print(sensor_string)
 
-    sleep(30)
+
 </code></pre>
 
 <p>Flash the script onto the micro:bit by clicking on the Flash button in the editor.</p>
