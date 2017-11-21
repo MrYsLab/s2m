@@ -20,6 +20,6 @@ __MAJOR FEATURES__
 * It is a whole lot of fun to use!
 
 
-A User's Guide is available [here](https://mryslab.github.io/s2m/)
+__For installation and usage instructions, please read the [users guide](https://mryslab.github.io/s2m/)__.
 
 This project was developed with [Pycharm](https://www.jetbrains.com/pycharm/)![pyc](https://raw.github.com/MrYsLab/s2m/master/images/icon_PyCharm.png)
