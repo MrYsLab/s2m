@@ -101,7 +101,7 @@ class S2M(threading.Thread):
         # place to store the last received poll data
         self.last_poll_result = None
 
-        print('\ns2m version 1.02  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.03  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
