@@ -80,6 +80,21 @@
     <li class="toctree-l2"><a href="#shutting-down">Shutting Down</a></li>
     
 
+    <li class="toctree-l2"><a href="#manually-starting-s2m-and-scratch">Manually Starting s2m and Scratch</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#manual-start-step-1">Manual Start: Step 1</a></li>
+        
+            <li><a class="toctree-l3" href="#manual-start-step-2">Manual Start: Step 2</a></li>
+        
+            <li><a class="toctree-l3" href="#manual-start-step-3">Manual Start: Step 3</a></li>
+        
+            <li><a class="toctree-l3" href="#manual-start-step-4">Manual Start: Step 4</a></li>
+        
+        </ul>
+    
+
     </ul>
 	    </li>
           
@@ -168,6 +183,40 @@ installed into the standard directory.</p>
 <h1 id="shutting-down">Shutting Down</h1>
 <p>Before shutting down, make sure to save your Scratch project. To shutdown, press <strong>Control-C</strong> in the command window.
 This will close both s2m and Scratch. </p>
+<h1 id="manually-starting-s2m-and-scratch">Manually Starting s2m and Scratch</h1>
+<h2 id="manual-start-step-1">Manual Start: Step 1</h2>
+<p>Download the s2m Scratch project file, <strong>s2m.sb2</strong>,  by going to the following URL in your Web browser</p>
+<p><a href="https://github.com/MrYsLab/s2m/blob/master/s2m/scratch_files/projects/s2m.sb2">https://github.com/MrYsLab/s2m/blob/master/s2m/scratch_files/projects/s2m.sb2</a></p>
+<p>Click on "View Raw" to download the file</p>
+<h2 id="manual-start-step-2">Manual Start: Step 2</h2>
+<p>Start s2m with the following command:</p>
+<pre><code>s2m -c no_client
+</code></pre>
+
+<p>You should then see something like this on your screen:</p>
+<pre><code>C:\Users\Alan&gt;s2m -c no_client
+
+s2m version 1.03  Copyright(C) 2017 Alan Yorinks  All rights reserved.
+
+Python Version 3.6.3 (v3.6.3:2c5fed8, Oct  3 2017, 18:11:49) [MSC v.1900 64 bit (AMD64)]
+Autodetecting serial port. Please wait...
+Using COM Port:com4
+
+micro:bit Python script may be found at c:\users\alan\appdata\local\programs\python\python36\lib\site-packages/s2m/micro_bit_scripts
+Use the mu editor (https://codewith.mu/) to flash your micro:bit.
+Please start Scratch.
+Starting HTTP Server!
+Use &lt;Ctrl-C&gt; to exit the extension.
+Please make sure you save your Scratch project BEFORE pressing Ctrl-C.
+</code></pre>
+
+<h2 id="manual-start-step-3">Manual Start: Step 3</h2>
+<p>Next, start Scratch up manually, then select File/Load from the Scratch menu.
+and load the file you downloaded in step 1.</p>
+<h2 id="manual-start-step-4">Manual Start: Step 4</h2>
+<p>If you now go to the More Blocks tab in Scratch, you should see micro:bit blocks appear 
+in the editor.</p>
+<p>You are now ready to start programming.</p>
               
             </div>
           </div>
