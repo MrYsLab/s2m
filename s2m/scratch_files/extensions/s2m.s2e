@@ -1,0 +1,160 @@
+{
+    "extensionName": "s2m",
+    "extensionPort": 50209,
+    "url": "https://mryslab.github.io/s2m/",
+    "blockSpecs": [
+        [
+            "w",
+            "Display %m.images",
+	        "display_image",
+	        "HAPPY"
+        ],
+        [
+            "w",
+            "Scroll %s",
+            "scroll",
+            "Replace With Your Text"
+        ],
+        [
+            "w",
+            "Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness",
+            "write_pixel",
+            "0",
+            "0",
+            "9"
+        ],
+        [
+            "w",
+            "Clear Display",
+            "display_clear"
+        ],
+        [
+            "w",
+            "Digital Write Pin %m.pins Value %m.val",
+            "digital_write",
+            "0",
+            "0"
+        ],
+        [
+            "w",
+            "Analog Write Pin %m.pins Value %n",
+            "analog_write",
+            "0",
+            "0"
+        ],
+        [
+            "b",
+            "Button A pressed?",
+            "button_a_pressed"
+        ],
+        [
+            "b",
+            "Button B pressed?",
+            "button_b_pressed"
+        ],
+        [
+            "b",
+            "Tilted right?",
+            "tilted_right"
+        ],
+        [
+            "b",
+            "Tilted left?",
+            "tilted_left"
+        ],
+        [
+            "b",
+            "Tilted up?",
+            "tilted_up"
+        ],
+        [
+            "b",
+            "Tilted down?",
+            "tilted_down"
+        ],
+        [
+            "b",
+            "Shaken?",
+            "shaken"
+        ],
+        [
+            "r",
+            "Digital Read Pin %m.pins",
+            "digital_read",
+            "0"
+        ],
+        [
+            "r",
+            "Analog Read Pin %m.pins",
+            "analog_read",
+            "0"
+        ]
+    ],
+    "menus": {
+	"images": [
+            "HAPPY",
+            "SAD",
+            "ANGRY",
+            "SMILE",
+            "HEART",
+            "CONFUSED",
+            "ANGRY",
+            "ASLEEP",
+            "SURPRISED",
+            "SILLY",
+            "FABULOUS",
+            "MEH",
+            "YES",
+            "NO",
+            "TRIANGLE",
+            "DIAMOND",
+            "DIAMOND_SMALL",
+            "SQUARE",
+            "SQUARE_SMALL",
+            "TARGET",
+            "STICKFIGURE",
+            "RABBIT",
+            "COW",
+            "ROLLERSKATE",
+            "HOUSE",
+            "SNAKE",
+            "ARROW_N",
+            "ARROW_NE",
+            "ARROW_E",
+            "ARROW_SE",
+            "ARROW_S",
+            "ARROW_SW",
+            "ARROW_W",
+            "ARROW_NW"
+
+	    ],
+	    "pixels": [
+	        "0",
+	        "1",
+	        "2",
+	        "3",
+	        "4"
+        ],
+        "brightness": [
+            "0",
+	        "1",
+	        "2",
+	        "3",
+	        "4",
+	        "5",
+	        "6",
+	        "7",
+	        "8",
+	        "9"
+        ],
+        "pins": [
+            "0",
+	        "1",
+	        "2"
+        ],
+        "val": [
+            "0",
+	        "1"
+        ] 
+    }
+}
