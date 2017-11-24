@@ -14,7 +14,7 @@
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 17 November 2017
+ Last modified 23 November 2017
 """
 
 from microbit import *
@@ -33,6 +33,7 @@ from microbit import *
 #   c - clear the display (no parameters)
 #   a - analog write for the specified pin and value (range 0-1023)
 #   t - digital write for the specified pin and value (0 or 1)
+#   v - get version string
 
 while True:
     data = uart.readline()
@@ -88,10 +89,10 @@ while True:
                           "ARROW_NW": Image.ARROW_NW}
 
             # get image key
-            # try:
-            image_key = cmd_list[1]
-            # except IndexError:
-            #     continue
+            try:
+                image_key = cmd_list[1]
+            except IndexError:
+                continue
             if image_key in image_dict:
                 display.show(image_dict.get(image_key), wait=False)
 
@@ -229,4 +230,7 @@ while True:
             sensor_string += str(pin2.read_analog())
 
             print(sensor_string)
+
+        if cmd == 'v':
+            print('s2mb.py Version 1.04 23 November 2017')
 

@@ -27,6 +27,7 @@ import psutil
 import atexit
 import threading
 from collections import deque
+import binascii
 
 try:
     # for python 3
@@ -101,7 +102,7 @@ class S2M(threading.Thread):
         # place to store the last received poll data
         self.last_poll_result = None
 
-        print('\ns2m version 1.04  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.05  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -170,13 +171,28 @@ class S2M(threading.Thread):
 
             print('{}{}\n'.format('Using COM Port:', detected))
 
+            # get version of s2mb.py
+            cmd = 'v\n'
+            cmd = bytes(cmd.encode())
+            self.micro_bit_serial.write(cmd)
+            time.sleep(2)
+            sent_time = time.time()
+            while not self.micro_bit_serial.inWaiting():
+                if time.time() - sent_time > 2:
+                    print('Unable to retrieve version s2mb.py on the micro:bit.')
+                    print('Have you flashed the latest version?')
+                    sys.exit(0)
+
+            v_string = self.micro_bit_serial.readline().decode().strip()
+            print('{}{}\n'.format('s2mb Version: ', v_string))
+
             self.find_base_path()
             if self.client == 'scratch':
                 print('Auto launching Scratch')
                 self.auto_load_scratch()
             else:
-                print('micro:bit Python script may be found at {}/micro_bit_scripts'.format(self.base_path))
-                print('Use the mu editor (https://codewith.mu/) to flash your micro:bit.')
+                # print('micro:bit Python script may be found at {}/micro_bit_scripts'.format(self.base_path))
+                # print('Use the mu editor (https://codewith.mu/) to flash your micro:bit.')
                 print('Please start Scratch.')
 
             # start the polling/command processing thread
@@ -290,6 +306,7 @@ class S2M(threading.Thread):
 
         :param data: text to scroll
         """
+        data = self.scratch_fix(data)
         self.send_command('s,' + data)
 
     def handle_write_pixel(self, data):
@@ -426,9 +443,34 @@ class S2M(threading.Thread):
             return data
 
     def all_done(self):
+        """
+        Kill the scratch process
+        :return:
+        """
         if self.scratch_pid:
             proc = psutil.Process(self.scratch_pid)
             proc.kill()
+
+    def scratch_fix(self, sst):
+        """
+        Scratch has a bug when presenting string. This method
+        compensates for that bug
+        :param sst: String to be scanned and fixed
+        :return:
+        """
+
+        result = ''
+        x = 0
+        while x < len(sst):
+            if sst[x] == '%':
+                sx = sst[x + 1] + sst[x + 2]
+                z = binascii.unhexlify(sx)
+                result += z.decode("utf-8")
+                x += 3
+            else:
+                result += sst[x]
+                x += 1
+        return result
 
     def run(self):
         """
