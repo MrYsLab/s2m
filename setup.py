@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='s2m',
-    version='1.05',
+    version='1.06',
     packages=['s2m'],
     install_requires=['pyserial>=2.7',
                       'psutil'],

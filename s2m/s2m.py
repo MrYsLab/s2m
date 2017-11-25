@@ -102,7 +102,7 @@ class S2M(threading.Thread):
         # place to store the last received poll data
         self.last_poll_result = None
 
-        print('\ns2m version 1.05  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.06  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -237,13 +237,14 @@ class S2M(threading.Thread):
                     if os.path.isdir(s_path):
                         # found it, set the base path
                         self.base_path = p + '/s2m'
-            if self.display_base_path:
-                print('Python path = ' + self.base_path)
-                sys.exit(0)
 
             if not self.base_path:
                 print('Cannot locate s2m files on path.')
-                print(self.base_path)
+                print('Python path = ' + str(self.base_path))
+                sys.exit(0)
+
+            if self.display_base_path:
+                print('Python path = ' + str(self.base_path))
                 sys.exit(0)
 
     def auto_load_scratch(self):
@@ -439,6 +440,7 @@ class S2M(threading.Thread):
         if command == 'g':
             while not self.micro_bit_serial.inWaiting():
                 pass
+            # noinspection PyArgumentList
             data = self.micro_bit_serial.readline().decode().strip()
             return data
 
