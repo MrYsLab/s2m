@@ -102,7 +102,7 @@ class S2M(threading.Thread):
         # place to store the last received poll data
         self.last_poll_result = None
 
-        print('\ns2m version 1.06  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.07  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -186,13 +186,11 @@ class S2M(threading.Thread):
             v_string = self.micro_bit_serial.readline().decode().strip()
             print('{}{}\n'.format('s2mb Version: ', v_string))
 
-            self.find_base_path()
             if self.client == 'scratch':
+                self.find_base_path()
                 print('Auto launching Scratch')
                 self.auto_load_scratch()
             else:
-                # print('micro:bit Python script may be found at {}/micro_bit_scripts'.format(self.base_path))
-                # print('Use the mu editor (https://codewith.mu/) to flash your micro:bit.')
                 print('Please start Scratch.')
 
             # start the polling/command processing thread
