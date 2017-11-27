@@ -225,11 +225,19 @@ class S2M(threading.Thread):
             # get all the paths
             path = sys.path
 
-            # get the prefix
-            prefix = sys.prefix
-            for p in path:
-                # make sure the prefix is in the path to avoid false positives
-                if prefix in p:
+            if not sys.platform.startswith('darwin'):
+                # get the prefix
+                prefix = sys.prefix
+                for p in path:
+                    # make sure the prefix is in the path to avoid false positives
+                    if prefix in p:
+                        # look for the configuration directory
+                        s_path = p + '/s2m'
+                        if os.path.isdir(s_path):
+                            # found it, set the base path
+                            self.base_path = p + '/s2m'
+            else:
+                for p in path:
                     # look for the configuration directory
                     s_path = p + '/s2m'
                     if os.path.isdir(s_path):
@@ -253,6 +261,8 @@ class S2M(threading.Thread):
         if self.scratch_executable == 'default':
             if sys.platform.startswith('win32'):
                 self.scratch_executable = "C:/Program Files (x86)/Scratch 2/Scratch 2.exe"
+            elif sys.platform.startswith('darwin'):
+                self.scratch_executable = "/Applications/Scratch\ 2.app/Contents/MacOS/Scratch\ 2"
             else:
                 self.scratch_executable = "/opt/Scratch\ 2/bin/Scratch\ 2"
 
