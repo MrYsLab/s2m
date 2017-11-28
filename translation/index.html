@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Translating The s2m Blocks To A Language Other Than English - s2m</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Translating The s2m Blocks To A Language Other Than English";
+    var mkdocs_page_input_path = "translation.md";
+    var mkdocs_page_url = "/translation/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> s2m</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">The s2m User's Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../install/">Installation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../usage/">Using s2m</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../blocks/">The s2m Blocks</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Translating The s2m Blocks To A Language Other Than English</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#translating-the-s2m-blocks">Translating The s2m Blocks</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#lets-get-started">Let's Get Started</a></li>
+        
+            <li><a class="toctree-l3" href="#loading-a-block-specification-file-into-scratch">Loading A Block Specification File Into Scratch</a></li>
+        
+            <li><a class="toctree-l3" href="#understanding-the-block-specification-file">Understanding The Block Specification File</a></li>
+        
+            <li><a class="toctree-l3" href="#the-specification-header">The Specification Header</a></li>
+        
+            <li><a class="toctree-l3" href="#the-block-descriptors">The Block Descriptors</a></li>
+        
+            <li><a class="toctree-l3" href="#the-menu-descriptors">The Menu Descriptors</a></li>
+        
+            <li><a class="toctree-l3" href="#first-line-of-the-descriptor">First Line Of The Descriptor</a></li>
+        
+            <li><a class="toctree-l3" href="#second-line-of-the-descriptor">Second Line Of The Descriptor</a></li>
+        
+            <li><a class="toctree-l3" href="#modifying-the-second-line-of-the-block-descriptor">Modifying The Second Line Of The Block Descriptor</a></li>
+        
+            <li><a class="toctree-l3" href="#the-third-line-of-the-descriptor">The Third Line Of The Descriptor</a></li>
+        
+            <li><a class="toctree-l3" href="#the-fourth-and-following-lines-for-a-given-descriptor">The Fourth and Following Lines For A Given Descriptor</a></li>
+        
+            <li><a class="toctree-l3" href="#translating-the-menu-descriptors">Translating The Menu Descriptors</a></li>
+        
+            <li><a class="toctree-l3" href="#in-summary">In Summary</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../s2m/">How s2m Works</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">s2m</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Translating The s2m Blocks To A Language Other Than English</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="translating-the-s2m-blocks">Translating The s2m Blocks</h1>
+<p>The section will explain how to translate the custom blocks to a language other than English.</p>
+<p>If you create a translation, and would like me to include it as part of s2m's distribution, please
+send me your tested .s2e Scratch extension specification file.</p>
+<p>You will be given full credit for the translation and your name will appear in this User's Guide</p>
+<h2 id="lets-get-started">Let's Get Started</h2>
+<p>You should always use the Github .s2e file for the basis of your translation, since it will be the latest file
+available. That file may be found on Github <a href="https://github.com/MrYsLab/s2m/blob/master/s2m/scratch_files/extensions/s2m.s2e">here</a>.</p>
+<p>The Scratch extension specification is a <a href="../json.org">JSON</a> formatted file.</p>
+<p>For detailed information on the Scratch specification, you may refer to the <a href="https://wiki.scratch.mit.edu/w/images/ExtensionsDoc.HTTP-9-11.pdf">Extension Specfication</a>.</p>
+<p>When making changes to this file, do it in very small steps and then check your work by
+loading the changes into Scratch. If there are any errors introduced into the file, Scratch
+will not provide any error messages, and when you go to view the blocks in the More Blocks section,
+nothing will appear.</p>
+<p>Luckily, you can check for syntax errors by running the file through the <a href="https://jsonlint.com/">JSON Validator</a>.</p>
+<h2 id="loading-a-block-specification-file-into-scratch">Loading A Block Specification File Into Scratch</h2>
+<p>Before we describe the contents of the file, let's learn how to install the .s2e file into Scratch
+to create the custom extension blocks.</p>
+<p>After downloading s2m.s2e as described in the <a href="#before-you-start">section above</a>,
+open the Scratch editor. You do not have to have s2m running to load and view the blocks
+in Scratch.</p>
+<p>While holding the Shift button on your keyboard and click on the File menu in the upper
+left hand corner of the Scratch editor. The drop down list should have "Import experimental
+HTTP exension" as the last item in the menu. Select this item and choose your copy of s2m.s2e.</p>
+<p><img align="center" src="../images/s2e_2.png"></p>
+<p>If you then go to the More Blocks section, you should see the s2m blocks appear.</p>
+<p><img align="center" src="../images/s2e_3.png"></p>
+<p>The connection indicator should be red. This is normal when s2m is not connected to Scratch.</p>
+<p>Each time you make a change to this file, you will be reloading the file to your check
+your work.</p>
+<h2 id="understanding-the-block-specification-file">Understanding The Block Specification File</h2>
+<pre><code>     1  {
+     2      &quot;extensionName&quot;: &quot;s2m&quot;,
+     3      &quot;extensionPort&quot;: 50209,
+     4      &quot;url&quot;: &quot;https://mryslab.github.io/s2m/&quot;,
+     5      &quot;blockSpecs&quot;: [
+     6          [
+     7              &quot;w&quot;,
+     8              &quot;Display %m.images&quot;,
+     9              &quot;display_image&quot;,
+    10              &quot;HAPPY&quot;
+    11          ],
+    12          [
+    13              &quot;w&quot;,
+    14              &quot;Scroll %s&quot;,
+    15              &quot;scroll&quot;,
+    16              &quot;Replace With Your Text&quot;
+    17          ],
+    18          [
+    19              &quot;w&quot;,
+    20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
+    21              &quot;write_pixel&quot;,
+    22              &quot;0&quot;,
+    23              &quot;0&quot;,
+    24              &quot;9&quot;
+    25          ],
+    26          [
+    27              &quot;w&quot;,
+    28              &quot;Clear Display&quot;,
+    29              &quot;display_clear&quot;
+    30          ],
+    31          [
+    32              &quot;w&quot;,
+    33              &quot;Digital Write Pin %m.pins Value %m.val&quot;,
+    34              &quot;digital_write&quot;,
+    35              &quot;0&quot;,
+    36              &quot;0&quot;
+    37          ],
+    38          [
+    39              &quot;w&quot;,
+    40              &quot;Analog Write Pin %m.pins Value %n&quot;,
+    41              &quot;analog_write&quot;,
+    42              &quot;0&quot;,
+    43              &quot;0&quot;
+    44          ],
+    45          [
+    46              &quot;b&quot;,
+    47              &quot;Button A pressed?&quot;,
+    48              &quot;button_a_pressed&quot;
+    49          ],
+    50          [
+    51              &quot;b&quot;,
+    52              &quot;Button B pressed?&quot;,
+    53              &quot;button_b_pressed&quot;
+    54          ],
+    55          [
+    56              &quot;b&quot;,
+    57              &quot;Tilted right?&quot;,
+    58              &quot;tilted_right&quot;
+    59          ],
+    60          [
+    61              &quot;b&quot;,
+    62              &quot;Tilted left?&quot;,
+    63              &quot;tilted_left&quot;
+    64          ],
+    65          [
+    66              &quot;b&quot;,
+    67              &quot;Tilted up?&quot;,
+    68              &quot;tilted_up&quot;
+    69          ],
+    70          [
+    71              &quot;b&quot;,
+    72              &quot;Tilted down?&quot;,
+    73              &quot;tilted_down&quot;
+    74          ],
+    75          [
+    76              &quot;b&quot;,
+    77              &quot;Shaken?&quot;,
+    78              &quot;shaken&quot;
+    79          ],
+    80          [
+    81              &quot;r&quot;,
+    82              &quot;Digital Read Pin %m.pins&quot;,
+    83              &quot;digital_read&quot;,
+    84              &quot;0&quot;
+    85          ],
+    86          [
+    87              &quot;r&quot;,
+    88              &quot;Analog Read Pin %m.pins&quot;,
+    89              &quot;analog_read&quot;,
+    90              &quot;0&quot;
+    91          ]
+    92      ],
+    93      &quot;menus&quot;: {
+    94      &quot;images&quot;: [
+    95              &quot;HAPPY&quot;,
+    96              &quot;SAD&quot;,
+    97              &quot;ANGRY&quot;,
+    98              &quot;SMILE&quot;,
+    99              &quot;HEART&quot;,
+   100              &quot;CONFUSED&quot;,
+   101              &quot;ANGRY&quot;,
+   102              &quot;ASLEEP&quot;,
+   103              &quot;SURPRISED&quot;,
+   104              &quot;SILLY&quot;,
+   105              &quot;FABULOUS&quot;,
+   106              &quot;MEH&quot;,
+   107              &quot;YES&quot;,
+   108              &quot;NO&quot;,
+   109              &quot;TRIANGLE&quot;,
+   110              &quot;DIAMOND&quot;,
+   111              &quot;DIAMOND_SMALL&quot;,
+   112              &quot;SQUARE&quot;,
+   113              &quot;SQUARE_SMALL&quot;,
+   114              &quot;TARGET&quot;,
+   115              &quot;STICKFIGURE&quot;,
+   116              &quot;RABBIT&quot;,
+   117              &quot;COW&quot;,
+   118              &quot;ROLLERSKATE&quot;,
+   119              &quot;HOUSE&quot;,
+   120              &quot;SNAKE&quot;,
+   121              &quot;ARROW_N&quot;,
+   122              &quot;ARROW_NE&quot;,
+   123              &quot;ARROW_E&quot;,
+   124              &quot;ARROW_SE&quot;,
+   125              &quot;ARROW_S&quot;,
+   126              &quot;ARROW_SW&quot;,
+   127              &quot;ARROW_W&quot;,
+   128              &quot;ARROW_NW&quot;
+   129  
+   130          ],
+   131          &quot;pixels&quot;: [
+   132              &quot;0&quot;,
+   133              &quot;1&quot;,
+   134              &quot;2&quot;,
+   135              &quot;3&quot;,
+   136              &quot;4&quot;
+   137          ],
+   138          &quot;brightness&quot;: [
+   139              &quot;0&quot;,
+   140              &quot;1&quot;,
+   141              &quot;2&quot;,
+   142              &quot;3&quot;,
+   143              &quot;4&quot;,
+   144              &quot;5&quot;,
+   145              &quot;6&quot;,
+   146              &quot;7&quot;,
+   147              &quot;8&quot;,
+   148              &quot;9&quot;
+   149          ],
+   150          &quot;pins&quot;: [
+   151              &quot;0&quot;,
+   152              &quot;1&quot;,
+   153              &quot;2&quot;
+   154          ],
+   155          &quot;val&quot;: [
+   156              &quot;0&quot;,
+   157              &quot;1&quot;
+   158          ] 
+   159      }
+   160  }
+</code></pre>
+
+<p>The file is comprised of three major sections:</p>
+<h2 id="the-specification-header">The Specification Header</h2>
+<p>Lines 1-4 contain the header. In general you should not modify this section. The one item you can modify, if you
+wish, is the extension name shown on line 2. The extension name will appear in the More Blocks
+section of Scratch to the left of the connection indicator. For example, if you wish to change
+s2m to s2m_Italiano you would modify line 2 to look like </p>
+<pre><code>&quot;extensionName&quot;: &quot;s2m_Italiano&quot;,
+</code></pre>
+
+<h2 id="the-block-descriptors">The Block Descriptors</h2>
+<p>Lines 5-92 describe the type of block (rectangular command block, round reporter block, etc.), any parameters
+the block contains, a block identifier string, and a set of default values for the parameters. </p>
+<p>This is the descriptor for the Display image block.</p>
+<pre><code>     6          [
+     7              &quot;w&quot;,
+     8              &quot;Display %m.images&quot;,
+     9              &quot;display_image&quot;,
+    10              &quot;HAPPY&quot;
+    11          ],
+</code></pre>
+
+<h2 id="the-menu-descriptors">The Menu Descriptors</h2>
+<p>See <a href="#second-line-of-the-descriptor">this section</a> for a discussion of menu descriptors and
+<a href="#translating-the-menu-descriptors">this section </a> for a discussion on providing translations for them.</p>
+<h2 id="first-line-of-the-descriptor">First Line Of The Descriptor</h2>
+<p>The first line of every descriptor describes the shape and function of the block we wish to use.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Symbol</th>
+<th align="center">Block Type</th>
+<th align="center">Block Shape</th>
+<th align="center">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">" "</td>
+<td align="center">Command</td>
+<td align="center">Rectangular</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">"w"</td>
+<td align="center">Command</td>
+<td align="center">Rectangular</td>
+<td align="center">Wait for operation to complete</td>
+</tr>
+<tr>
+<td align="center">"b"</td>
+<td align="center">Boolean Reporter</td>
+<td align="center">Pointy</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">"r"</td>
+<td align="center">Reporter</td>
+<td align="center">Round</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>This line should not be changed!!</strong></p>
+<h2 id="second-line-of-the-descriptor">Second Line Of The Descriptor</h2>
+<p>This line contains the text and parameters for the block.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter Symbol</th>
+<th align="center">Parameter Type</th>
+<th align="center">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">%m.NAME_OF_MENU</td>
+<td align="center">Menu (Drop Down List)</td>
+<td align="center">Use the NAME_OF_MENU to see the choices.</td>
+</tr>
+<tr>
+<td align="center">%s</td>
+<td align="center">String</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%n</td>
+<td align="center">Numeric</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>For the <strong>Display images block</strong>, the menu is named <strong>images</strong>.</p>
+<p>The <strong>images</strong> menu is defined at the bottom of the file at lines 94-130.</p>
+<p>Lines 8, 20, 33 40, 82 and 88 all contain "menu" parameters.</p>
+<p>Line 20, contains multiple menu parameters:</p>
+<pre><code>20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
+</code></pre>
+
+<p>Line 14 contains a single string parameter, and line 40 contains a single numeric parameter.</p>
+<h2 id="modifying-the-second-line-of-the-block-descriptor">Modifying The Second Line Of The Block Descriptor</h2>
+<p>In this line, you may change the English to the language of your choice. 
+In addition, you may reorder the parameters in the block.
+<strong>You may not change the parameter type.</strong></p>
+<h2 id="the-third-line-of-the-descriptor">The Third Line Of The Descriptor</h2>
+<p>This is the value that Scratch uses as an identification for the block when the block is executed.</p>
+<p><strong>Do not modify this line.</strong> It is used internally by s2m.</p>
+<h2 id="the-fourth-and-following-lines-for-a-given-descriptor">The Fourth and Following Lines For A Given Descriptor</h2>
+<p>The entries in this line and for any following line, is the initial value shown for each parameter.</p>
+<p>Let's look at the Write Pixel block as an example</p>
+<pre><code>                [
+    19              &quot;w&quot;,
+    20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
+    21              &quot;write_pixel&quot;,
+    22              &quot;0&quot;,
+    23              &quot;0&quot;,
+    24              &quot;9&quot;
+    25          ],
+</code></pre>
+
+<p>Lines 22, 23, and 24 contain the initial of zero for the row, zero for the column and 9 for the intensity.</p>
+<p><strong>Do not change any of the numeric initial values for any of the blocks.</strong></p>
+<p>You may however, modify line 16 to be any string you wish, and line 10. Line 10 should match the string contained
+in line 65.</p>
+<h2 id="translating-the-menu-descriptors">Translating The Menu Descriptors</h2>
+<p>Only the strings in lines 95 - 128 can be modified. All other menus should not be modified.
+For the names of the images, you will need to append a 2 digit number followed by an underbar to the
+translated name of each shape.</p>
+<p>For example, if you wanted to translate "HAPPY" on line 95 to Italian, you would change it to 
+"01_Contento". The next item in the menu would start with "02_". Each item's 2 digit number is 1 greater than
+the one preceding it. Also line 10, would need to be translated to "01_Contento" as well, to set the initial
+value within the block.</p>
+<h2 id="in-summary">In Summary</h2>
+<p>To provide a translation:</p>
+<ol>
+<li>Translate the text contained in the second line of each block descriptor. </li>
+<li>Order the parameters to meet the grammatical needs of your language.</li>
+<li>If you wish to translate the image names, remember to precede each translation with a 2 digit 
+sequential number followed by an underbar and then the image name. Finally, set the initial value in the 
+display image block to be the same as that of the first entry in the image menu.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../s2m/" class="btn btn-neutral float-right" title="How s2m Works">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../blocks/" class="btn btn-neutral" title="The s2m Blocks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../blocks/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../s2m/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
