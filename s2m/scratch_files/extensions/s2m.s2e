@@ -1,23 +1,23 @@
 {
-    "extensionName": "s2m 日本語",
+    "extensionName": "s2m",
     "extensionPort": 50209,
     "url": "https://mryslab.github.io/s2m/",
     "blockSpecs": [
         [
             "w",
-            "%m.images を表示",
+            "Display %m.images",
 	        "display_image",
-	        "01_うれしい顔"
+	        "HAPPY"
         ],
         [
             "w",
-            "文字列を表示 %s",
+            "Scroll %s",
             "scroll",
-            "Hello!"
+            "Replace With Your Text"
         ],
         [
             "w",
-            "点灯 X %m.pixels Y %m.pixels 明るさ %m.brightness",
+            "Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness",
             "write_pixel",
             "0",
             "0",
@@ -25,107 +25,107 @@
         ],
         [
             "w",
-            "表示を消す",
+            "Clear Display",
             "display_clear"
         ],
         [
             "w",
-            "デジタルで出力する 端子 %m.pins 値 %m.val",
+            "Digital Write Pin %m.pins Value %m.val",
             "digital_write",
             "0",
             "0"
         ],
         [
             "w",
-            "アナログで出力する 端子 %m.pins 値 %n",
+            "Analog Write Pin %m.pins Value %n",
             "analog_write",
             "0",
             "0"
         ],
         [
             "b",
-            "ボタンAが押されている",
+            "Button A pressed?",
             "button_a_pressed"
         ],
         [
             "b",
-            "ボタンBが押されている",
+            "Button B pressed?",
             "button_b_pressed"
         ],
         [
             "b",
-            "右に傾けたとき",
+            "Tilted right?",
             "tilted_right"
         ],
         [
             "b",
-            "左に傾けたとき",
+            "Tilted left?",
             "tilted_left"
         ],
         [
             "b",
-            "上に傾けたとき",
+            "Tilted up?",
             "tilted_up"
         ],
         [
             "b",
-            "下に傾けたとき",
+            "Tilted down?",
             "tilted_down"
         ],
         [
             "b",
-            "ゆさぶられたとき",
+            "Shaken?",
             "shaken"
         ],
         [
             "r",
-            "デジタルで読み取る 端子 %m",
+            "Digital Read Pin %m.pins",
             "digital_read",
             "0"
         ],
         [
             "r",
-            "アナログ値を読み取る 端子 %m",
+            "Analog Read Pin %m.pins",
             "analog_read",
             "0"
         ]
     ],
     "menus": {
 	"images": [
-            "01_うれしい顔",
-            "02_かなしい顔",
-            "03_おこり顔",
-            "04_スマイル",
-            "05_ハート",
-            "06_こまり顔",
-            "07_おこり顔",
-            "08_ねてる顔",
-            "09_びっくり顔",
-            "10_へん顔",
-            "11_すばらしい",
-            "12_ふーん",
-            "13_チェック",
-            "14_バツ",
-            "15_三角",
-            "16_ダイアモンド",
-            "17_小さいダイアモンド",
-            "18_しかく",
-            "19_小さいしかく",
-            "20_まと",
-            "21_棒人間",
-            "22_うさぎ",
-            "23_うし",
-            "24_ローラースケート",
-            "25_家",
-            "26_へび",
-            "27_上矢印",
-            "28_右上矢印",
-            "29_右矢印",
-            "30_右下矢印",
-            "31_下矢印",
-            "32_左下矢印",
-            "33_左矢印",
-            "34_左上矢印"
+            "HAPPY",
+            "SAD",
+            "ANGRY",
+            "SMILE",
+            "HEART",
+            "CONFUSED",
+            "ANGRY",
+            "ASLEEP",
+            "SURPRISED",
+            "SILLY",
+            "FABULOUS",
+            "MEH",
+            "YES",
+            "NO",
+            "TRIANGLE",
+            "DIAMOND",
+            "DIAMOND_SMALL",
+            "SQUARE",
+            "SQUARE_SMALL",
+            "TARGET",
+            "STICKFIGURE",
+            "RABBIT",
+            "COW",
+            "ROLLERSKATE",
+            "HOUSE",
+            "SNAKE",
+            "ARROW_N",
+            "ARROW_NE",
+            "ARROW_E",
+            "ARROW_SE",
+            "ARROW_S",
+            "ARROW_SW",
+            "ARROW_W",
+            "ARROW_NW"
 
 	    ],
 	    "pixels": [
@@ -155,6 +155,6 @@
         "val": [
             "0",
 	        "1"
-        ]
+        ] 
     }
 }
