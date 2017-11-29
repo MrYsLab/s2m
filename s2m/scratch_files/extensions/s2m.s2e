@@ -4,19 +4,19 @@
     "url": "https://mryslab.github.io/s2m/",
     "blockSpecs": [
         [
-            "w",
+            " ",
             "Display %m.images",
 	        "display_image",
 	        "HAPPY"
         ],
         [
-            "w",
+            " ",
             "Scroll %s",
             "scroll",
             "Replace With Your Text"
         ],
         [
-            "w",
+            " ",
             "Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness",
             "write_pixel",
             "0",
@@ -24,19 +24,19 @@
             "9"
         ],
         [
-            "w",
+            " ",
             "Clear Display",
             "display_clear"
         ],
         [
-            "w",
+            " ",
             "Digital Write Pin %m.pins Value %m.val",
             "digital_write",
             "0",
             "0"
         ],
         [
-            "w",
+            " ",
             "Analog Write Pin %m.pins Value %n",
             "analog_write",
             "0",
@@ -98,7 +98,6 @@
             "SMILE",
             "HEART",
             "CONFUSED",
-            "ANGRY",
             "ASLEEP",
             "SURPRISED",
             "SILLY",

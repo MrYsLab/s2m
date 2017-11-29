@@ -51,7 +51,7 @@ class S2M(threading.Thread):
     # noinspection PyArgumentList
     def __init__(self, client=None, com_port=None,
                  scratch_executable=None, base_path=None,
-                 display_base_path=False):
+                 display_base_path=False, language='0'):
         """
         This method initializes the class. All parameters are normally filled in
         by using the command line options listed at the bottom of this file
@@ -73,6 +73,7 @@ class S2M(threading.Thread):
         self.scratch_executable = scratch_executable
         self.base_path = base_path
         self.display_base_path = display_base_path
+        self.language = language
 
         # the scratch process id
         self.scratch_pid = None
@@ -102,7 +103,42 @@ class S2M(threading.Thread):
         # place to store the last received poll data
         self.last_poll_result = None
 
-        print('\ns2m version 1.07  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        # map of image names used for translations
+        self.image_map = {"01": "HAPPY",
+                          "02": "SAD",
+                          "03": "ANGRY",
+                          "04": "SMILE",
+                          "05": "HEART",
+                          "06": "CONFUSED",
+                          "07": "ASLEEP",
+                          "08": "SURPRISED",
+                          "09": "SILLY",
+                          "10": "FABULOUS",
+                          "11": "MEH",
+                          "12": "YES",
+                          "13": "NO",
+                          "14": "TRIANGLE",
+                          "15": "DIAMOND",
+                          "16": "DIAMOND_SMALL",
+                          "17": "SQUARE",
+                          "18": "SQUARE_SMALL",
+                          "19": "TARGET",
+                          "20": "STICKFIGURE",
+                          "21": "RABBIT",
+                          "22": "COW",
+                          "23": "ROLLERSKATE",
+                          "24": "HOUSE",
+                          "25": "SNAKE",
+                          "26": "ARROW_N",
+                          "27": "ARROW_NE",
+                          "28": "ARROW_E",
+                          "29": "ARROW_SE",
+                          "30": "ARROW_S",
+                          "31": "ARROW_SW",
+                          "32": "ARROW_W",
+                          "33": "ARROW_NW"}
+
+        print('\ns2m version 1.09  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -266,7 +302,11 @@ class S2M(threading.Thread):
             else:
                 self.scratch_executable = "/opt/Scratch\ 2/bin/Scratch\ 2"
 
-        self.scratch_project = self.base_path + "/scratch_files/projects/s2m.sb2"
+        if self.language == '0':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m.sb2"
+        elif self.language == '1':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ja.sb2"
+
         exec_string = self.scratch_executable + ' ' + self.scratch_project
 
         if self.scratch_executable and self.scratch_project:
@@ -306,7 +346,11 @@ class S2M(threading.Thread):
 
         :param data: image to display
         """
-
+        # check if this is a translated string
+        if data[2] == '_':
+            key = data[:2]
+            if key in self.image_map:
+                data = self.image_map[key]
         self.send_command('d,' + data)
 
     def handle_scroll(self, data):
@@ -315,6 +359,7 @@ class S2M(threading.Thread):
 
         :param data: text to scroll
         """
+
         data = self.scratch_fix(data)
         self.send_command('s,' + data)
 
@@ -548,8 +593,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-b", dest="base_path", default="None",
                         help="Python File Path - e.g. /usr/local/lib/python3.5/dist-packages/s2m")
-    parser.add_argument("-d", dest="display", default="None", help='Show base path - set to "true"')
     parser.add_argument("-c", dest="client", default="scratch", help="default = scratch [scratch | no_client]")
+    parser.add_argument("-d", dest="display", default="None", help='Show base path - set to "true"')
+    parser.add_argument("-l", dest="language", default="0", help="Select Language: 0 = English, 1 = Japanese")
     parser.add_argument("-p", dest="comport", default="None", help="micro:bit COM port - e.g. /dev/ttyACMO or COM3")
     parser.add_argument("-r", dest="rpi", default="None", help="Set to TRUE to run on a Raspberry Pi")
     parser.add_argument("-s", dest="scratch_exec", default="default", help="Full path to Scratch executable")
@@ -572,6 +618,12 @@ def main():
     else:
         comport = args.comport
 
+    valid_languages = ['0', '1']
+    lang = args.language
+
+    if lang not in valid_languages:
+        lang = '0'
+
     scratch_exec = args.scratch_exec
     # wait_time = int(args.wait)
 
@@ -581,7 +633,7 @@ def main():
 
     # start s2m
     S2M(client=client_type, com_port=comport, scratch_executable=scratch_exec,
-        base_path=user_base_path, display_base_path=display)
+        base_path=user_base_path, display_base_path=display, language=lang)
 
 
 if __name__ == "__main__":
