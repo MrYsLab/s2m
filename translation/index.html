@@ -182,19 +182,19 @@ your work.</p>
      4      &quot;url&quot;: &quot;https://mryslab.github.io/s2m/&quot;,
      5      &quot;blockSpecs&quot;: [
      6          [
-     7              &quot;w&quot;,
+     7              &quot; &quot;,
      8              &quot;Display %m.images&quot;,
      9              &quot;display_image&quot;,
     10              &quot;HAPPY&quot;
     11          ],
     12          [
-    13              &quot;w&quot;,
+    13              &quot; &quot;,
     14              &quot;Scroll %s&quot;,
     15              &quot;scroll&quot;,
     16              &quot;Replace With Your Text&quot;
     17          ],
     18          [
-    19              &quot;w&quot;,
+    19              &quot; &quot;,
     20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
     21              &quot;write_pixel&quot;,
     22              &quot;0&quot;,
@@ -202,19 +202,19 @@ your work.</p>
     24              &quot;9&quot;
     25          ],
     26          [
-    27              &quot;w&quot;,
+    27              &quot; &quot;,
     28              &quot;Clear Display&quot;,
     29              &quot;display_clear&quot;
     30          ],
     31          [
-    32              &quot;w&quot;,
+    32              &quot; &quot;,
     33              &quot;Digital Write Pin %m.pins Value %m.val&quot;,
     34              &quot;digital_write&quot;,
     35              &quot;0&quot;,
     36              &quot;0&quot;
     37          ],
     38          [
-    39              &quot;w&quot;,
+    39              &quot; &quot;,
     40              &quot;Analog Write Pin %m.pins Value %n&quot;,
     41              &quot;analog_write&quot;,
     42              &quot;0&quot;,
@@ -352,7 +352,7 @@ s2m to s2m_Italiano you would modify line 2 to look like </p>
 the block contains, a block identifier string, and a set of default values for the parameters. </p>
 <p>This is the descriptor for the Display image block.</p>
 <pre><code>     6          [
-     7              &quot;w&quot;,
+     7              &quot; &quot;,
      8              &quot;Display %m.images&quot;,
      9              &quot;display_image&quot;,
     10              &quot;HAPPY&quot;
@@ -370,7 +370,6 @@ the block contains, a block identifier string, and a set of default values for t
 <th align="center">Symbol</th>
 <th align="center">Block Type</th>
 <th align="center">Block Shape</th>
-<th align="center">Note</th>
 </tr>
 </thead>
 <tbody>
@@ -378,25 +377,16 @@ the block contains, a block identifier string, and a set of default values for t
 <td align="center">" "</td>
 <td align="center">Command</td>
 <td align="center">Rectangular</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">"w"</td>
-<td align="center">Command</td>
-<td align="center">Rectangular</td>
-<td align="center">Wait for operation to complete</td>
 </tr>
 <tr>
 <td align="center">"b"</td>
 <td align="center">Boolean Reporter</td>
 <td align="center">Pointy</td>
-<td align="center"></td>
 </tr>
 <tr>
 <td align="center">"r"</td>
 <td align="center">Reporter</td>
 <td align="center">Round</td>
-<td align="center"></td>
 </tr>
 </tbody>
 </table>
