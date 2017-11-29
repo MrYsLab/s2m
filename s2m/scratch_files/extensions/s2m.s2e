@@ -1,23 +1,23 @@
 {
-    "extensionName": "s2m",
+    "extensionName": "s2m 日本語",
     "extensionPort": 50209,
     "url": "https://mryslab.github.io/s2m/",
     "blockSpecs": [
         [
             "w",
-            "Display %m.images",
+            "%m.images を表示",
 	        "display_image",
-	        "HAPPY"
+	        "01_うれしい顔"
         ],
         [
             "w",
-            "Scroll %s",
+            "文字列を表示 %s",
             "scroll",
-            "Replace With Your Text"
+            "Hello!"
         ],
         [
             "w",
-            "Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness",
+            "点灯 X %m.pixels Y %m.pixels 明るさ %m.brightness",
             "write_pixel",
             "0",
             "0",
@@ -25,107 +25,107 @@
         ],
         [
             "w",
-            "Clear Display",
+            "表示を消す",
             "display_clear"
         ],
         [
             "w",
-            "Digital Write Pin %m.pins Value %m.val",
+            "デジタルで出力する 端子 %m.pins 値 %m.val",
             "digital_write",
             "0",
             "0"
         ],
         [
             "w",
-            "Analog Write Pin %m.pins Value %n",
+            "アナログで出力する 端子 %m.pins 値 %n",
             "analog_write",
             "0",
             "0"
         ],
         [
             "b",
-            "Button A pressed?",
+            "ボタンAが押されている",
             "button_a_pressed"
         ],
         [
             "b",
-            "Button B pressed?",
+            "ボタンBが押されている",
             "button_b_pressed"
         ],
         [
             "b",
-            "Tilted right?",
+            "右に傾けたとき",
             "tilted_right"
         ],
         [
             "b",
-            "Tilted left?",
+            "左に傾けたとき",
             "tilted_left"
         ],
         [
             "b",
-            "Tilted up?",
+            "上に傾けたとき",
             "tilted_up"
         ],
         [
             "b",
-            "Tilted down?",
+            "下に傾けたとき",
             "tilted_down"
         ],
         [
             "b",
-            "Shaken?",
+            "ゆさぶられたとき",
             "shaken"
         ],
         [
             "r",
-            "Digital Read Pin %m.pins",
+            "デジタルで読み取る 端子 %m",
             "digital_read",
             "0"
         ],
         [
             "r",
-            "Analog Read Pin %m.pins",
+            "アナログ値を読み取る 端子 %m",
             "analog_read",
             "0"
         ]
     ],
     "menus": {
 	"images": [
-            "HAPPY",
-            "SAD",
-            "ANGRY",
-            "SMILE",
-            "HEART",
-            "CONFUSED",
-            "ANGRY",
-            "ASLEEP",
-            "SURPRISED",
-            "SILLY",
-            "FABULOUS",
-            "MEH",
-            "YES",
-            "NO",
-            "TRIANGLE",
-            "DIAMOND",
-            "DIAMOND_SMALL",
-            "SQUARE",
-            "SQUARE_SMALL",
-            "TARGET",
-            "STICKFIGURE",
-            "RABBIT",
-            "COW",
-            "ROLLERSKATE",
-            "HOUSE",
-            "SNAKE",
-            "ARROW_N",
-            "ARROW_NE",
-            "ARROW_E",
-            "ARROW_SE",
-            "ARROW_S",
-            "ARROW_SW",
-            "ARROW_W",
-            "ARROW_NW"
+            "01_うれしい顔",
+            "02_かなしい顔",
+            "03_おこり顔",
+            "04_スマイル",
+            "05_ハート",
+            "06_こまり顔",
+            "07_おこり顔",
+            "08_ねてる顔",
+            "09_びっくり顔",
+            "10_へん顔",
+            "11_すばらしい",
+            "12_ふーん",
+            "13_チェック",
+            "14_バツ",
+            "15_三角",
+            "16_ダイアモンド",
+            "17_小さいダイアモンド",
+            "18_しかく",
+            "19_小さいしかく",
+            "20_まと",
+            "21_棒人間",
+            "22_うさぎ",
+            "23_うし",
+            "24_ローラースケート",
+            "25_家",
+            "26_へび",
+            "27_上矢印",
+            "28_右上矢印",
+            "29_右矢印",
+            "30_右下矢印",
+            "31_下矢印",
+            "32_左下矢印",
+            "33_左矢印",
+            "34_左上矢印"
 
 	    ],
 	    "pixels": [
@@ -155,6 +155,6 @@
         "val": [
             "0",
 	        "1"
-        ] 
+        ]
     }
 }
