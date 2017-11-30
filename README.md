@@ -21,6 +21,11 @@ __MAJOR FEATURES__
 
 * English and [Japanese blocks](https://mryslab.github.io/s2m/blocks/#the-japanese-blocks) are available for use.
 
+* If you would like to translate the blocks to your native language, check out
+the [tranlation instructions in the User's Guide](https://mryslab.github.io/s2m/translation/)
+    * Submit your translation, and it will become part of the s2m distribution package, with your name
+    added to the list of translation contributors in the User's Guide.
+
 
 __For installation and usage instructions, please read the [users guide](https://mryslab.github.io/s2m/)__.
 
