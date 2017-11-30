@@ -70,6 +70,12 @@
 
     <li class="toctree-l2"><a href="#command-line-options">Command Line Options</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#creating-a-windows-desktop-icon-for-quick-start-up">Creating A Windows Desktop Icon For Quick Start Up</a></li>
+        
+        </ul>
+    
 
     <li class="toctree-l2"><a href="#shutting-down">Shutting Down</a></li>
     
@@ -145,14 +151,14 @@
 <pre><code>s2m
 </code></pre>
 
-<p>The command window should display something similar to this:</p>
-<p><img align="center" src="../images/start_s2m.png"></p>
-<p>The program begins by announcing s2m's version number and thePython version in use.</p>
 <p>To load a translated set of blocks, use <a href="#command-line-options">the -l option</a>. For example, to load the Japanese blocks,
 enter:</p>
 <pre><code>s2m -l 1
 </code></pre>
 
+<p>The command window should display something similar to this:</p>
+<p><img align="center" src="../images/start_s2m.png"></p>
+<p>The program begins by announcing s2m's version number and thePython version in use.</p>
 <p>Next, s2m attempts to auto detect the communication port the micro:bit is connected to and announces
 the port found.</p>
 <p>It detects and announces the version of micro:bit script <em>s2mb.py</em> that was flashed to the micro:bit.</p>
@@ -211,6 +217,10 @@ installed into the standard install directory.</p>
 <pre><code>s2m -s C:\Users\Alan\Desktop\Scratch 2.exe
 </code></pre>
 
+<h2 id="creating-a-windows-desktop-icon-for-quick-start-up">Creating A Windows Desktop Icon For Quick Start Up</h2>
+<p>If you would like to create a Windows desktop icon for s2m, open your favorite text editor and enter the
+s2m command  adding any command line options that you might need, and save the file as <strong><em>s2m.bat</em></strong> in
+the <strong><em>Desktop</em></strong> directory. You should then see an s2m.bat icon appear on your desktop.</p>
 <h1 id="shutting-down">Shutting Down</h1>
 <p>Before shutting down, make sure to save your Scratch project. To shutdown, press <strong>Control-C</strong> in the command window.
 This will close both s2m and Scratch. </p>
