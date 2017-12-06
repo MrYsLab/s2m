@@ -32,7 +32,7 @@ except ImportError:
     from http.server import HTTPServer
 
 
-# noinspection PyMethodMayBeStatic
+# noinspection PyMethodMayBeStatic,PyUnresolvedReferences
 class GetHandler(BaseHTTPRequestHandler):
     """
     This class contains the HTTP server that Scratch2 communicates with.
@@ -70,12 +70,14 @@ class GetHandler(BaseHTTPRequestHandler):
         # add the poll or command to the appropriate deque
         # and send an HTTP response to Scratch
         if cmd_list[0] == 'poll':
-            self.s2m.poll_deque.append('poll')
-            with self.s2m.poll_data_lock:
-                self.send_resp(self.s2m.last_poll_result)
+            if self.s2m.ignore_poll:
+                self.send_resp('ok')
+            else:
+                self.send_resp(self.s2m.handle_poll())
+                self.s2m.ignore_poll = False
         else:
-            self.s2m.command_deque.append(cmd_list)
-            self.send_resp('ok')
+            # self.s2m.command_deque.append(cmd_list)
+            self.process_command(cmd_list)
 
     # we can't use the standard send_response since we don't conform to its
     # standards, so we craft our own response handler here
@@ -107,7 +109,7 @@ class GetHandler(BaseHTTPRequestHandler):
             pass
         # end of GetHandler class
 
-    def process_get(self, cmd_list):
+    def process_command(self, cmd_list):
         """
         This method provides processing for each command. It translates the
         Scratch command into a command that matches the s2mb.py file
@@ -116,16 +118,12 @@ class GetHandler(BaseHTTPRequestHandler):
         :return:
         """
         cmd = cmd_list[0]
-        if cmd == 'poll':
-            resp = self.s2m.get_last_poll_result()
-            self.send_resp(resp)
-            self.s2m.handle_poll()
 
         # process commands
 
         # create a display image command, send it to
         # the micro:bit and send an HTTP reply to Scratch
-        elif cmd == 'display_image':
+        if cmd == 'display_image':
             resp = self.s2m.handle_display_image(cmd_list[1])
             self.send_resp(resp)
 

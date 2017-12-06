@@ -14,20 +14,19 @@
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
-# noinspection PyPackageRequirements
-import serial
-import os
+import argparse
+import atexit
+import binascii
 import glob
+import os
+import subprocess
 import sys
 import time
-import argparse
-import subprocess
 from subprocess import Popen
+
 import psutil
-import atexit
-import threading
-from collections import deque
-import binascii
+# noinspection PyPackageRequirements
+import serial
 
 try:
     # for python 3
@@ -40,7 +39,7 @@ except ImportError:
 
 
 # noinspection PyMethodMayBeStatic,PyProtectedMember
-class S2M(threading.Thread):
+class S2M:
     """
     This is the main class for s2m. It instantiates the http server
     and provides the processing for all messages coming from Scratch and
@@ -62,9 +61,9 @@ class S2M(threading.Thread):
         :param scratch_executable: path to scratch executable
         :param base_path: python path to s2m installation
         :param display_base_path: show the base path and exit.
+        :param language: language for block display
         """
 
-        threading.Thread.__init__(self)
         self.daemon = True
 
         # save the __init__ parameters
@@ -87,18 +86,8 @@ class S2M(threading.Thread):
         # remember the last accelerometer z value to determine if shaken
         self.last_z = 0
 
-        # threading event to control the thread loop
-        self.stop_event = threading.Event()
-
-        # deques to for the http sever to save commands and polls
-        self.command_deque = deque()
-        self.poll_deque = deque()
-
-        # state variable to alternately service polls and commands
-        self.deque_flip_flop = True
-
-        # lock to protect poll data
-        self.poll_data_lock = threading.Lock()
+        # if this is True and a poll is received, the poll is ignored
+        self.ignore_poll = True
 
         # place to store the last received poll data
         self.last_poll_result = None
@@ -138,7 +127,7 @@ class S2M(threading.Thread):
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 1.09  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.10  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -230,27 +219,13 @@ class S2M(threading.Thread):
                 print('Please start Scratch.')
 
             # start the polling/command processing thread
-            self.start()
-
+            # self.start()
+            self.ignore_poll = False
             # start the http server
             try:
                 start_server(self)
             except KeyboardInterrupt:
                 sys.exit(0)
-
-    def stop(self):
-        """
-        Stop the thread loop if running
-        :return:
-        """
-        self.stop_event.set()
-
-    def is_stopped(self):
-        """
-        Check to see if thread is stopped
-        :return:
-        """
-        return self.stop_event.is_set()
 
     def find_base_path(self):
         """
@@ -306,6 +281,8 @@ class S2M(threading.Thread):
             self.scratch_project = self.base_path + "/scratch_files/projects/s2m.sb2"
         elif self.language == '1':
             self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ja.sb2"
+        elif self.language == 'ja':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ja.sb2"
 
         exec_string = self.scratch_executable + ' ' + self.scratch_project
 
@@ -328,7 +305,7 @@ class S2M(threading.Thread):
         This method sends a poll request to the micro:bit
         :return: sensor data
         """
-
+        self.ignore_poll = True
         resp = self.send_command('g')
         resp = resp.lower()
         reply = resp.split(',')
@@ -527,67 +504,6 @@ class S2M(threading.Thread):
                 x += 1
         return result
 
-    def run(self):
-        """
-        Watchdog thread
-        :return:
-        """
-        while not self.is_stopped():
-            self.deque_flip_flop = not self.deque_flip_flop
-
-            # process the poll
-            if self.deque_flip_flop:
-                if len(self.poll_deque):
-                    self.poll_deque.clear()
-                    poll_result = self.handle_poll()
-                    if poll_result:
-                        with self.poll_data_lock:
-                            self.last_poll_result = poll_result
-
-            else:
-                # process the commands
-
-                if len(self.command_deque):
-                    try:
-                        cmd_list = self.command_deque.popleft()
-                    except IndexError:
-                        continue
-
-                    cmd = cmd_list[0]
-
-                    if cmd == 'display_image':
-                        self.handle_display_image(cmd_list[1])
-
-                    elif cmd == 'scroll':
-                        self.handle_scroll(cmd_list[1])
-
-                    elif cmd == 'write_pixel':
-                        params = cmd_list[1:]
-                        cmd_params = ",".join(params)
-                        self.handle_write_pixel(cmd_params)
-
-                    elif cmd == 'display_clear':
-                        self.handle_display_clear()
-
-                    elif cmd == 'digital_write':
-                        params = cmd_list[1:]
-                        cmd_params = ",".join(params)
-                        self.handle_digital_write(cmd_params)
-
-                    elif cmd == 'analog_write':
-                        params = cmd_list[1:]
-                        cmd_params = ",".join(params)
-                        self.handle_analog_write(cmd_params)
-
-                    elif cmd == 'reset_all':
-                        self.handle_reset_all()
-
-                    # received an unknown command, ignore it
-                    else:
-                        print('unknown command received: {}'.format(cmd))
-
-            time.sleep(.001)
-
 
 def main():
     parser = argparse.ArgumentParser()
@@ -595,7 +511,7 @@ def main():
                         help="Python File Path - e.g. /usr/local/lib/python3.5/dist-packages/s2m")
     parser.add_argument("-c", dest="client", default="scratch", help="default = scratch [scratch | no_client]")
     parser.add_argument("-d", dest="display", default="None", help='Show base path - set to "true"')
-    parser.add_argument("-l", dest="language", default="0", help="Select Language: 0 = English, 1 = Japanese")
+    parser.add_argument("-l", dest="language", default="0", help="Select Language: 0 = English, 1 or ja = Japanese")
     parser.add_argument("-p", dest="comport", default="None", help="micro:bit COM port - e.g. /dev/ttyACMO or COM3")
     parser.add_argument("-r", dest="rpi", default="None", help="Set to TRUE to run on a Raspberry Pi")
     parser.add_argument("-s", dest="scratch_exec", default="default", help="Full path to Scratch executable")
@@ -618,14 +534,13 @@ def main():
     else:
         comport = args.comport
 
-    valid_languages = ['0', '1']
+    valid_languages = ['0', '1', 'ja']
     lang = args.language
 
     if lang not in valid_languages:
         lang = '0'
 
     scratch_exec = args.scratch_exec
-    # wait_time = int(args.wait)
 
     if args.rpi != 'None':
         # wait_time = 15

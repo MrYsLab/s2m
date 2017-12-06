@@ -14,7 +14,7 @@
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 23 November 2017
+ Last modified 05 December 2017
 """
 
 from microbit import *
@@ -37,7 +37,7 @@ from microbit import *
 
 while True:
     data = uart.readline()
-    sleep(50)
+    sleep(8)
     if data:
         cmd = str(data, 'utf-8').rstrip()
         if not len(cmd):
@@ -96,14 +96,12 @@ while True:
             if image_key in image_dict:
                 display.show(image_dict.get(image_key), wait=False)
 
-            # sleep(50)
-
         # scroll text command
-        if cmd_id == 's':
+        elif cmd_id == 's':
             display.scroll(cmd_list[1], wait=False)
 
         # write pixel command
-        if cmd_id == 'p':
+        elif cmd_id == 'p':
             # get row, column and intensity value
             # make sure values are within valid range
             # print(cmd)
@@ -143,14 +141,13 @@ while True:
                 value = 9
             display.set_pixel(x, y, value)
 
-
         # clear display command
-        if cmd_id == 'c':
+        elif cmd_id == 'c':
             display.clear()
 
         # analog write command
         # if values are out of range, command is ignored
-        if cmd_id == 'a':
+        elif cmd_id == 'a':
             # check pin and value ranges
             try:
                 pin = int(cmd_list[1])
@@ -160,23 +157,20 @@ while True:
             except ValueError:
                 continue
 
-            if 0 <= pin < 2:
-                if 0 <= value < 1024:
-                    if pin == 0:
-                        pin0.write_analog(value)
-                    elif pin == 1:
-                        pin1.write_analog(value)
-                    elif pin == 2:
-                        pin2.write_analog(value)
-                    else:
-                        pass
-
+            if 0 <= pin <= 2:
+                if not 0 <= value <= 1023:
+                    value = 256
+                if pin == 0:
+                    pin0.write_analog(value)
+                elif pin == 1:
+                    pin1.write_analog(value)
+                elif pin == 2:
+                    pin2.write_analog(value)
 
         # digital write command
-        if cmd_id == 't':
+        elif cmd_id == 't':
             # check pin and value ranges
             # if values are out of range, command is ignored
-
             try:
                 pin = int(cmd_list[1])
                 value = int(cmd_list[2])
@@ -185,8 +179,8 @@ while True:
             except ValueError:
                 continue
 
-            if 0 <= pin < 2:
-                if 0 <= value < 3:
+            if 0 <= pin <= 2:
+                if 0 <= value <= 1:
                     if pin == 0:
                         pin0.write_digital(value)
                     elif pin == 1:
@@ -196,10 +190,7 @@ while True:
                 else:
                     pass
 
-
-
-
-        if cmd == 'g':
+        elif cmd == 'g':
             # This string will contain the sensor values and will
             # be "printed" to the serial port.
             # Fields are comma delimited
@@ -231,6 +222,8 @@ while True:
 
             print(sensor_string)
 
-        if cmd == 'v':
-            print('s2mb.py Version 1.04 23 November 2017')
+        elif cmd == 'v':
+            print('s2mb.py Version 1.05 05 December 2017')
+        else:
+            continue
 

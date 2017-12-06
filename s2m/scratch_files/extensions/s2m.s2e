@@ -17,7 +17,7 @@
         ],
         [
             " ",
-            "Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness",
+            "Write Pixel X %n Y %n Intensity %n",
             "write_pixel",
             "0",
             "0",
@@ -125,27 +125,7 @@
             "ARROW_SW",
             "ARROW_W",
             "ARROW_NW"
-
 	    ],
-	    "pixels": [
-	        "0",
-	        "1",
-	        "2",
-	        "3",
-	        "4"
-        ],
-        "brightness": [
-            "0",
-	        "1",
-	        "2",
-	        "3",
-	        "4",
-	        "5",
-	        "6",
-	        "7",
-	        "8",
-	        "9"
-        ],
         "pins": [
             "0",
 	        "1",
