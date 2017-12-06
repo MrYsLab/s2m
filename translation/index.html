@@ -195,7 +195,7 @@ your work.</p>
     17          ],
     18          [
     19              &quot; &quot;,
-    20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
+    20              &quot;Write Pixel X %n Y %n Intensity %n&quot;,
     21              &quot;write_pixel&quot;,
     22              &quot;0&quot;,
     23              &quot;0&quot;,
@@ -276,66 +276,45 @@ your work.</p>
     98              &quot;SMILE&quot;,
     99              &quot;HEART&quot;,
    100              &quot;CONFUSED&quot;,
-   101              &quot;ANGRY&quot;,
-   102              &quot;ASLEEP&quot;,
-   103              &quot;SURPRISED&quot;,
-   104              &quot;SILLY&quot;,
-   105              &quot;FABULOUS&quot;,
-   106              &quot;MEH&quot;,
-   107              &quot;YES&quot;,
-   108              &quot;NO&quot;,
-   109              &quot;TRIANGLE&quot;,
-   110              &quot;DIAMOND&quot;,
-   111              &quot;DIAMOND_SMALL&quot;,
-   112              &quot;SQUARE&quot;,
-   113              &quot;SQUARE_SMALL&quot;,
-   114              &quot;TARGET&quot;,
-   115              &quot;STICKFIGURE&quot;,
-   116              &quot;RABBIT&quot;,
-   117              &quot;COW&quot;,
-   118              &quot;ROLLERSKATE&quot;,
-   119              &quot;HOUSE&quot;,
-   120              &quot;SNAKE&quot;,
-   121              &quot;ARROW_N&quot;,
-   122              &quot;ARROW_NE&quot;,
-   123              &quot;ARROW_E&quot;,
-   124              &quot;ARROW_SE&quot;,
-   125              &quot;ARROW_S&quot;,
-   126              &quot;ARROW_SW&quot;,
-   127              &quot;ARROW_W&quot;,
-   128              &quot;ARROW_NW&quot;
-   129  
-   130          ],
-   131          &quot;pixels&quot;: [
-   132              &quot;0&quot;,
-   133              &quot;1&quot;,
-   134              &quot;2&quot;,
-   135              &quot;3&quot;,
-   136              &quot;4&quot;
-   137          ],
-   138          &quot;brightness&quot;: [
-   139              &quot;0&quot;,
-   140              &quot;1&quot;,
-   141              &quot;2&quot;,
-   142              &quot;3&quot;,
-   143              &quot;4&quot;,
-   144              &quot;5&quot;,
-   145              &quot;6&quot;,
-   146              &quot;7&quot;,
-   147              &quot;8&quot;,
-   148              &quot;9&quot;
-   149          ],
-   150          &quot;pins&quot;: [
-   151              &quot;0&quot;,
-   152              &quot;1&quot;,
-   153              &quot;2&quot;
-   154          ],
-   155          &quot;val&quot;: [
-   156              &quot;0&quot;,
-   157              &quot;1&quot;
-   158          ] 
-   159      }
-   160  }
+   101              &quot;ASLEEP&quot;,
+   102              &quot;SURPRISED&quot;,
+   103              &quot;SILLY&quot;,
+   104              &quot;FABULOUS&quot;,
+   105              &quot;MEH&quot;,
+   106              &quot;YES&quot;,
+   107              &quot;NO&quot;,
+   108              &quot;TRIANGLE&quot;,
+   109              &quot;DIAMOND&quot;,
+   110              &quot;DIAMOND_SMALL&quot;,
+   111              &quot;SQUARE&quot;,
+   112              &quot;SQUARE_SMALL&quot;,
+   113              &quot;TARGET&quot;,
+   114              &quot;STICKFIGURE&quot;,
+   115              &quot;RABBIT&quot;,
+   116              &quot;COW&quot;,
+   117              &quot;ROLLERSKATE&quot;,
+   118              &quot;HOUSE&quot;,
+   119              &quot;SNAKE&quot;,
+   120              &quot;ARROW_N&quot;,
+   121              &quot;ARROW_NE&quot;,
+   122              &quot;ARROW_E&quot;,
+   123              &quot;ARROW_SE&quot;,
+   124              &quot;ARROW_S&quot;,
+   125              &quot;ARROW_SW&quot;,
+   126              &quot;ARROW_W&quot;,
+   127              &quot;ARROW_NW&quot;
+   128          ],
+   129          &quot;pins&quot;: [
+   130              &quot;0&quot;,
+   131              &quot;1&quot;,
+   132              &quot;2&quot;
+   133          ],
+   134          &quot;val&quot;: [
+   135              &quot;0&quot;,
+   136              &quot;1&quot;
+   137          ] 
+   138      }
+   139  }
 </code></pre>
 
 <p>The file is comprised of three major sections:</p>
@@ -422,8 +401,8 @@ the block contains, a block identifier string, and a set of default values for t
 <p>For the <strong>Display images block</strong>, the menu is named <strong>images</strong>.</p>
 <p>The <strong>images</strong> menu is defined at the bottom of the file at lines 94-130.</p>
 <p>Lines 8, 20, 33 40, 82 and 88 all contain "menu" parameters.</p>
-<p>Line 20, contains multiple menu parameters:</p>
-<pre><code>20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
+<p>Line 33, contains multiple menu parameters:</p>
+<pre><code>    33              &quot;Digital Write Pin %m.pins Value %m.val&quot;,
 </code></pre>
 
 <p>Line 14 contains a single string parameter, and line 40 contains a single numeric parameter.</p>
@@ -437,9 +416,9 @@ In addition, you may reorder the parameters in the block.
 <h2 id="the-fourth-and-following-lines-for-a-given-descriptor">The Fourth and Following Lines For A Given Descriptor</h2>
 <p>The entries in this line and for any following line, is the initial value shown for each parameter.</p>
 <p>Let's look at the Write Pixel block as an example</p>
-<pre><code>                [
-    19              &quot;w&quot;,
-    20              &quot;Write Pixel X %m.pixels Y %m.pixels Intensity %m.brightness&quot;,
+<pre><code>    18          [
+    19              &quot; &quot;,
+    20              &quot;Write Pixel X %n Y %n Intensity %n&quot;,
     21              &quot;write_pixel&quot;,
     22              &quot;0&quot;,
     23              &quot;0&quot;,

@@ -168,7 +168,7 @@ for your system.</p>
 <h2 id="installing-the-s2m-microbit-script-on-the-microbit">Installing the  <strong><em>s2m</em></strong> micro:bit Script On The micro:bit</h2>
 <p>Plug your micro:bit into a USB port on your computer. Start the mu editor and then paste this script into the editor.
 You may also find the script <a href="">here</a>.</p>
-<pre><code>&quot;&quot;&quot;
+<pre><code>&quot;&quot;&quot;&quot;
  Copyright (c) 2017 Alan Yorinks All rights reserved.
 
  This program is free software; you can redistribute it and/or
@@ -184,7 +184,7 @@ You may also find the script <a href="">here</a>.</p>
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 23 November 2017
+ Last modified 05 December 2017
 &quot;&quot;&quot;
 
 from microbit import *
@@ -207,7 +207,7 @@ from microbit import *
 
 while True:
     data = uart.readline()
-    sleep(50)
+    sleep(8)
     if data:
         cmd = str(data, 'utf-8').rstrip()
         if not len(cmd):
@@ -266,14 +266,12 @@ while True:
             if image_key in image_dict:
                 display.show(image_dict.get(image_key), wait=False)
 
-            # sleep(50)
-
         # scroll text command
-        if cmd_id == 's':
+        elif cmd_id == 's':
             display.scroll(cmd_list[1], wait=False)
 
         # write pixel command
-        if cmd_id == 'p':
+        elif cmd_id == 'p':
             # get row, column and intensity value
             # make sure values are within valid range
             # print(cmd)
@@ -313,14 +311,13 @@ while True:
                 value = 9
             display.set_pixel(x, y, value)
 
-
         # clear display command
-        if cmd_id == 'c':
+        elif cmd_id == 'c':
             display.clear()
 
         # analog write command
         # if values are out of range, command is ignored
-        if cmd_id == 'a':
+        elif cmd_id == 'a':
             # check pin and value ranges
             try:
                 pin = int(cmd_list[1])
@@ -330,23 +327,20 @@ while True:
             except ValueError:
                 continue
 
-            if 0 &lt;= pin &lt; 2:
-                if 0 &lt;= value &lt; 1024:
-                    if pin == 0:
-                        pin0.write_analog(value)
-                    elif pin == 1:
-                        pin1.write_analog(value)
-                    elif pin == 2:
-                        pin2.write_analog(value)
-                    else:
-                        pass
-
+            if 0 &lt;= pin &lt;= 2:
+                if not 0 &lt;= value &lt;= 1023:
+                    value = 256
+                if pin == 0:
+                    pin0.write_analog(value)
+                elif pin == 1:
+                    pin1.write_analog(value)
+                elif pin == 2:
+                    pin2.write_analog(value)
 
         # digital write command
-        if cmd_id == 't':
+        elif cmd_id == 't':
             # check pin and value ranges
             # if values are out of range, command is ignored
-
             try:
                 pin = int(cmd_list[1])
                 value = int(cmd_list[2])
@@ -355,8 +349,8 @@ while True:
             except ValueError:
                 continue
 
-            if 0 &lt;= pin &lt; 2:
-                if 0 &lt;= value &lt; 3:
+            if 0 &lt;= pin &lt;= 2:
+                if 0 &lt;= value &lt;= 1:
                     if pin == 0:
                         pin0.write_digital(value)
                     elif pin == 1:
@@ -366,10 +360,7 @@ while True:
                 else:
                     pass
 
-
-
-
-        if cmd == 'g':
+        elif cmd == 'g':
             # This string will contain the sensor values and will
             # be &quot;printed&quot; to the serial port.
             # Fields are comma delimited
@@ -401,9 +392,10 @@ while True:
 
             print(sensor_string)
 
-        if cmd == 'v':
-            print('s2mb.py Version 1.04 23 November 2017')
-
+        elif cmd == 'v':
+            print('s2mb.py Version 1.05 05 December 2017')
+        else:
+            continue
 
 
 </code></pre>

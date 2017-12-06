@@ -156,9 +156,14 @@
 <h2 id="write-pixel">Write Pixel</h2>
 <p>This command block allows you to control each individual pixel on the LED display. A pixel is chosen
 by specifying its x or horizontal position, y or vertical position, and its intensity or brightness.</p>
-<p>An x value of 0 is the left most column and 4 is the right most.</p>
-<p>A y value of 0 is top row and 4 is the bottom row.</p>
-<p>An intensity value of 0 is the lowest level and 9 is the highest.</p>
+<p>An <strong>X</strong> value of 0 is the left most column and a value of 4 is the right most.</p>
+<p>A <strong>Y</strong> value of 0 is the top row and a value of 4 is the bottom row.</p>
+<p>An intensity (brightness) value of 0 is the lowest level and 9 is the highest.</p>
+<p>If you enter a value that is out of range, it will be converted internally to valid value. Please note,
+that the value will not be updated in the block because Scratch does not provide a programmatic way to do so.</p>
+<p>If you enter a negative value for any of the parameters, the value used internally will be a zero.
+If you enter a value greater than 4 for the x or y parameters, the value  used internally will be a 4.
+If you enter a value greater than 9 for the intensity parameter, the value  used internally will be a 9.</p>
 <p><img align="center" src="../images/write_pixel_block.png"></p>
 <h2 id="clear-display">Clear Display</h2>
 <p>This command block will immediately turn all LED pixels off.</p>
@@ -168,6 +173,9 @@ by specifying its x or horizontal position, y or vertical position, and its inte
 <p><img align="center" src="../images/digital_write_block.png"></p>
 <h2 id="analog-write">Analog Write</h2>
 <p>This command block allows you to set pins 0, 1, or 2 to a value of 0 to 1023.</p>
+<p>If you enter a value that is out of range, the value will silently be set to 256 internally.
+Please note,
+that the value will not be updated in the block because Scratch does not provide a programmatic way to do so.</p>
 <p><img align="center" src="../images/analog_write_block.png"></p>
 <h2 id="button-pressed">Button Pressed</h2>
 <p>These binary reporter blocks report if their associated button is pressed or not. They return a value
