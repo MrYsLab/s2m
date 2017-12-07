@@ -127,7 +127,7 @@ class S2M:
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 1.10  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.11  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -324,9 +324,11 @@ class S2M:
         :param data: image to display
         """
         # check if this is a translated string
-        if data[2] == '_':
-            key = data[:2]
-            if key in self.image_map:
+        key = data
+        if len(data) > 2:
+            if data[2] == '_':
+                key = data[:2]
+        if key in self.image_map:
                 data = self.image_map[key]
         self.send_command('d,' + data)
 

@@ -14,7 +14,7 @@
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 05 December 2017
+ Last modified 07 December 2017
 """
 
 from microbit import *
@@ -98,7 +98,7 @@ while True:
 
         # scroll text command
         elif cmd_id == 's':
-            display.scroll(cmd_list[1], wait=False)
+            display.scroll(str(cmd_list[1]), wait=False)
 
         # write pixel command
         elif cmd_id == 'p':
@@ -223,7 +223,7 @@ while True:
             print(sensor_string)
 
         elif cmd == 'v':
-            print('s2mb.py Version 1.05 05 December 2017')
+            print('s2mb.py Version 1.06 07 December 2017')
         else:
             continue
 
