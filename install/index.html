@@ -168,7 +168,7 @@ for your system.</p>
 <h2 id="installing-the-s2m-microbit-script-on-the-microbit">Installing the  <strong><em>s2m</em></strong> micro:bit Script On The micro:bit</h2>
 <p>Plug your micro:bit into a USB port on your computer. Start the mu editor and then paste this script into the editor.
 You may also find the script <a href="">here</a>.</p>
-<pre><code>&quot;&quot;&quot;&quot;
+<pre><code>&quot;&quot;&quot;
  Copyright (c) 2017 Alan Yorinks All rights reserved.
 
  This program is free software; you can redistribute it and/or
@@ -184,7 +184,7 @@ You may also find the script <a href="">here</a>.</p>
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 05 December 2017
+ Last modified 07 December 2017
 &quot;&quot;&quot;
 
 from microbit import *
@@ -268,7 +268,7 @@ while True:
 
         # scroll text command
         elif cmd_id == 's':
-            display.scroll(cmd_list[1], wait=False)
+            display.scroll(str(cmd_list[1]), wait=False)
 
         # write pixel command
         elif cmd_id == 'p':
@@ -393,9 +393,10 @@ while True:
             print(sensor_string)
 
         elif cmd == 'v':
-            print('s2mb.py Version 1.05 05 December 2017')
+            print('s2mb.py Version 1.06 07 December 2017')
         else:
             continue
+
 
 
 </code></pre>
