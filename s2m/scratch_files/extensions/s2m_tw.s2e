@@ -1,0 +1,139 @@
+{
+    "extensionName": "s2m 正體中文",
+    "extensionPort": 50209,
+    "url": "https://mryslab.github.io/s2m/",
+    "blockSpecs": [
+        [
+            " ",
+            "顯示 %m.images",
+	        "display_image",
+	        "HAPPY"
+        ],
+        [
+            " ",
+            "捲動 %s",
+            "scroll",
+            "置換成您的文字"
+        ],
+        [
+            " ",
+            "繪製像素 X %n Y %n 亮度 %n",
+            "write_pixel",
+            "0",
+            "0",
+            "9"
+        ],
+        [
+            " ",
+            "清除顯示",
+            "display_clear"
+        ],
+        [
+            " ",
+            "數位信號寫入腳位 %m.pins 成 %m.val",
+            "digital_write",
+            "0",
+            "0"
+        ],
+        [
+            " ",
+            "類比信號寫入腳位 %m.pins 成 %n",
+            "analog_write",
+            "0",
+            "0"
+        ],
+        [
+            "b",
+            "按鍵 A 被按下？",
+            "button_a_pressed"
+        ],
+        [
+            "b",
+            "按鍵 B 被按下？",
+            "button_b_pressed"
+        ],
+        [
+            "b",
+            "向右傾斜？",
+            "tilted_right"
+        ],
+        [
+            "b",
+            "向左傾斜？",
+            "tilted_left"
+        ],
+        [
+            "b",
+            "向上傾斜？",
+            "tilted_up"
+        ],
+        [
+            "b",
+            "向下傾斜？",
+            "tilted_down"
+        ],
+        [
+            "b",
+            "搖動？",
+            "shaken"
+        ],
+        [
+            "r",
+            "數位信號讀取腳位 %m.pins",
+            "digital_read",
+            "0"
+        ],
+        [
+            "r",
+            "類比信號讀取腳位 %m.pins",
+            "analog_read",
+            "0"
+        ]
+    ],
+    "menus": {
+	"images": [
+            "HAPPY",
+            "SAD",
+            "ANGRY",
+            "SMILE",
+            "HEART",
+            "CONFUSED",
+            "ASLEEP",
+            "SURPRISED",
+            "SILLY",
+            "FABULOUS",
+            "MEH",
+            "YES",
+            "NO",
+            "TRIANGLE",
+            "DIAMOND",
+            "DIAMOND_SMALL",
+            "SQUARE",
+            "SQUARE_SMALL",
+            "TARGET",
+            "STICKFIGURE",
+            "RABBIT",
+            "COW",
+            "ROLLERSKATE",
+            "HOUSE",
+            "SNAKE",
+            "ARROW_N",
+            "ARROW_NE",
+            "ARROW_E",
+            "ARROW_SE",
+            "ARROW_S",
+            "ARROW_SW",
+            "ARROW_W",
+            "ARROW_NW"
+	    ],
+        "pins": [
+            "0",
+	        "1",
+	        "2"
+        ],
+        "val": [
+            "0",
+	        "1"
+        ] 
+    }
+}
