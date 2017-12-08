@@ -19,7 +19,10 @@ __MAJOR FEATURES__
 
 * It is a whole lot of fun!
 
-* English and [Japanese blocks](https://mryslab.github.io/s2m/blocks/#the-japanese-blocks) are available for use.
+* English, [Japanese](https://mryslab.github.io/s2m/blocks/#the-japanese-blocks), 
+[Korean](https://mryslab.github.io/s2m/blocks/#the-korean-blocks), and 
+[Traditional (tw) Chinese](https://mryslab.github.io/s2m/blocks/#the-traditional-chinese-tw-blocks) 
+blocks are available for use.
 
 * If you would like to translate the blocks to your native language, check out
 the [translation instructions in the User's Guide](https://mryslab.github.io/s2m/translation/)

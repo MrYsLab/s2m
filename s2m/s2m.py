@@ -22,6 +22,7 @@ import os
 import subprocess
 import sys
 import time
+from argparse import RawTextHelpFormatter
 from subprocess import Popen
 
 import psutil
@@ -127,7 +128,7 @@ class S2M:
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 1.11  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 1.12  Copyright(C) 2017 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -154,7 +155,10 @@ class S2M:
                              'com3', 'com4', 'com5', 'com6', 'com7', 'com8',
                              'com9', 'com10', 'com11', 'com12', 'com13',
                              'com14', 'com15', 'com16', 'com17', 'com18',
-                             'com19', 'com20', 'com21', 'com1', 'end'
+                             'com19', 'com20', 'com21', 'com22', 'com23', 'com24',
+                             'com25', 'com26', 'com27', 'com28', 'com29', 'com30',
+                             'com31', 'com32', 'com33', 'com34', 'com35', 'com36',
+                             'com1', 'end'
                              ]
 
             detected = None
@@ -283,6 +287,18 @@ class S2M:
             self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ja.sb2"
         elif self.language == 'ja':
             self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ja.sb2"
+        elif self.language == '2':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ko.sb2"
+        elif self.language == 'ko':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ko.sb2"
+        elif self.language == '3':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_tw.sb2"
+        elif self.language == 'tw':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_tw.sb2"
+        elif self.language == '4':
+            self.scratch_project = self.base_path + "/scratch_files/projects/motion_tw.sb2"
+        elif self.language == 'tws':
+            self.scratch_project = self.base_path + "/scratch_files/projects/motion_tw.sb2"
 
         exec_string = self.scratch_executable + ' ' + self.scratch_project
 
@@ -329,7 +345,7 @@ class S2M:
             if data[2] == '_':
                 key = data[:2]
         if key in self.image_map:
-                data = self.image_map[key]
+            data = self.image_map[key]
         self.send_command('d,' + data)
 
     def handle_scroll(self, data):
@@ -499,7 +515,11 @@ class S2M:
             if sst[x] == '%':
                 sx = sst[x + 1] + sst[x + 2]
                 z = binascii.unhexlify(sx)
-                result += z.decode("utf-8")
+                try:
+                    result += z.decode("utf-8")
+                except UnicodeDecodeError:
+                    print('Warning: Scroll text must be in Roman characters')
+                    return ('Scroll text must be in Roman characters')
                 x += 3
             else:
                 result += sst[x]
@@ -508,12 +528,16 @@ class S2M:
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    # parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description='s2m', formatter_class=RawTextHelpFormatter)
     parser.add_argument("-b", dest="base_path", default="None",
                         help="Python File Path - e.g. /usr/local/lib/python3.5/dist-packages/s2m")
     parser.add_argument("-c", dest="client", default="scratch", help="default = scratch [scratch | no_client]")
     parser.add_argument("-d", dest="display", default="None", help='Show base path - set to "true"')
-    parser.add_argument("-l", dest="language", default="0", help="Select Language: 0 = English, 1 or ja = Japanese")
+    parser.add_argument("-l", dest="language", default="0",
+                        help="Select Language: \n0 = English(default)\n1 or ja = Japanese\n" \
+                             "2 or ko = Korean\n3 or tw = Traditional Chinese" \
+                             "\n4 or tws = Traditional Chinese Sample Project")
     parser.add_argument("-p", dest="comport", default="None", help="micro:bit COM port - e.g. /dev/ttyACMO or COM3")
     parser.add_argument("-r", dest="rpi", default="None", help="Set to TRUE to run on a Raspberry Pi")
     parser.add_argument("-s", dest="scratch_exec", default="default", help="Full path to Scratch executable")
@@ -536,7 +560,7 @@ def main():
     else:
         comport = args.comport
 
-    valid_languages = ['0', '1', 'ja']
+    valid_languages = ['0', '1', 'ja', '2', 'ko', '3', 'tw', '4', 'tws']
     lang = args.language
 
     if lang not in valid_languages:
