@@ -35,6 +35,9 @@ from microbit import *
 #   t - digital write for the specified pin and value (0 or 1)
 #   v - get version string
 
+# explicitly assign the same baudrate on both communicating devices
+uart.init(115200)
+
 while True:
     data = uart.readline()
     sleep(8)
