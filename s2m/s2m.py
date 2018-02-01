@@ -93,6 +93,9 @@ class S2M:
         # place to store the last received poll data
         self.last_poll_result = None
 
+        # serial port
+        self.micro_bit_serial = None
+
         # map of image names used for translations
         self.image_map = {"01": "HAPPY",
                           "02": "SAD",
@@ -182,54 +185,65 @@ class S2M:
             self.micro_bit_serial.close()
             self.micro_bit_serial.open()
             time.sleep(.05)
-
-            # send out a "poll" command to see if port is there
-            cmd = 'g\n'
-            cmd = bytes(cmd.encode())
-            self.micro_bit_serial.write(cmd)
-            time.sleep(2)
-            sent_time = time.time()
-            while not self.micro_bit_serial.inWaiting():
-                if time.time() - sent_time > 2:
-                    print('Unable to detect Serial Port, Please plug in '
-                          'cable or check cable connections.')
-                    sys.exit(0)
-            # read and decode a line and strip it of trailing \r\n
-            # save the data for the first poll received
-            self.last_poll_result = self.micro_bit_serial.readline().decode().strip()
-
-            print('{}{}\n'.format('Using COM Port:', detected))
-
-            # get version of s2mb.py
-            cmd = 'v\n'
-            cmd = bytes(cmd.encode())
-            self.micro_bit_serial.write(cmd)
-            time.sleep(2)
-            sent_time = time.time()
-            while not self.micro_bit_serial.inWaiting():
-                if time.time() - sent_time > 2:
-                    print('Unable to retrieve version s2mb.py on the micro:bit.')
-                    print('Have you flashed the latest version?')
-                    sys.exit(0)
-
-            v_string = self.micro_bit_serial.readline().decode().strip()
-            print('{}{}\n'.format('s2mb Version: ', v_string))
-
-            if self.client == 'scratch':
-                self.find_base_path()
-                print('Auto launching Scratch')
-                self.auto_load_scratch()
-            else:
-                print('Please start Scratch.')
-
-            # start the polling/command processing thread
-            # self.start()
-            self.ignore_poll = False
-            # start the http server
+        else:
             try:
-                start_server(self)
-            except KeyboardInterrupt:
+                self.micro_bit_serial = serial.Serial(port=self.com_port, baudrate=115200,
+                                                      timeout=.1)
+            except serial.SerialException:
+                print('Unable to find Serial Port, Please plug in '
+                      'cable or check cable connections.')
+                exit()
+            except OSError:
+                pass
+            time.sleep(.05)
+
+        # send out a "poll" command to see if port is there
+        cmd = 'g\n'
+        cmd = bytes(cmd.encode())
+        self.micro_bit_serial.write(cmd)
+        time.sleep(2)
+        sent_time = time.time()
+        while not self.micro_bit_serial.inWaiting():
+            if time.time() - sent_time > 2:
+                print('Unable to detect Serial Port, Please plug in '
+                      'cable or check cable connections.')
                 sys.exit(0)
+        # read and decode a line and strip it of trailing \r\n
+        # save the data for the first poll received
+        self.last_poll_result = self.micro_bit_serial.readline().decode().strip()
+
+        print('{}{}\n'.format('Using COM Port:', self.com_port))
+
+        # get version of s2mb.py
+        cmd = 'v\n'
+        cmd = bytes(cmd.encode())
+        self.micro_bit_serial.write(cmd)
+        time.sleep(2)
+        sent_time = time.time()
+        while not self.micro_bit_serial.inWaiting():
+            if time.time() - sent_time > 2:
+                print('Unable to retrieve version s2mb.py on the micro:bit.')
+                print('Have you flashed the latest version?')
+                sys.exit(0)
+
+        v_string = self.micro_bit_serial.readline().decode().strip()
+        print('{}{}\n'.format('s2mb Version: ', v_string))
+
+        if self.client == 'scratch':
+            self.find_base_path()
+            print('Auto launching Scratch')
+            self.auto_load_scratch()
+        else:
+            print('Please start Scratch.')
+
+        # start the polling/command processing thread
+        # self.start()
+        self.ignore_poll = False
+        # start the http server
+        try:
+            start_server(self)
+        except KeyboardInterrupt:
+            sys.exit(0)
 
     def find_base_path(self):
         """
@@ -519,7 +533,7 @@ class S2M:
                     result += z.decode("utf-8")
                 except UnicodeDecodeError:
                     print('Warning: Scroll text must be in Roman characters')
-                    return ('Scroll text must be in Roman characters')
+                    return 'Scroll text must be in Roman characters'
                 x += 3
             else:
                 result += sst[x]
