@@ -1,0 +1,139 @@
+{
+    "extensionName": "s2m_português_br",
+    "extensionPort": 50209,
+    "url": "https://mryslab.github.io/s2m/",
+    "blockSpecs": [
+        [
+            " ",
+            "Mostrar no visor %m.images",
+	        "display_image",
+	        "01_FELIZ"
+        ],
+        [
+            " ",
+            "Mostrar Texto %s",
+            "scroll",
+            "OLA!"
+        ],
+        [
+            " ",
+            "Ligar LED X %n Y %n Intensidade %n",
+            "write_pixel",
+            "0",
+            "0",
+            "9"
+        ],
+        [
+            " ",
+            "Apagar visor",
+            "display_clear"
+        ],
+        [
+            " ",
+            "Pino Digital %m.pins com Valor %m.val",
+            "digital_write",
+            "0",
+            "0"
+        ],
+        [
+            " ",
+            "Pino Analógico%m.pins com Value %n",
+            "analog_write",
+            "0",
+            "0"
+        ],
+        [
+            "b",
+            "Botão A pressionado?",
+            "button_a_pressed"
+        ],
+        [
+            "b",
+            "Botão B pressionado?",
+            "button_b_pressed"
+        ],
+        [
+            "b",
+            "Inclinado para Direita?",
+            "tilted_right"
+        ],
+        [
+            "b",
+            "Inclinado para Esquerda?",
+            "tilted_left"
+        ],
+        [
+            "b",
+            "Inclinado para Cima?",
+            "tilted_up"
+        ],
+        [
+            "b",
+            "Inclinado para Baixo?",
+            "tilted_down"
+        ],
+        [
+            "b",
+            "Chacoalhando?",
+            "shaken"
+        ],
+        [
+            "r",
+            "Ler pino digital %m.pins",
+            "digital_read",
+            "0"
+        ],
+        [
+            "r",
+            "Ler Pino Analógico %m.pins",
+            "analog_read",
+            "0"
+        ]
+    ],
+    "menus": {
+	"images": [
+            "01_FELIZ",
+            "02_TRISTE",
+            "03_BRAVO",
+            "04_SORRISO",
+            "05_CORAÇÃO",
+            "06_CONFUSO",
+            "07_SONOLENTO",
+            "08_SURPRESO",
+            "09_BOBO",
+            "10_FABULOSO",
+            "11_HMM",
+            "12_SIM",
+            "13_NÃO",
+            "14_TRIANGULO",
+            "15_DIAMANTE",
+            "16_DIAMANTE PEQUENO",
+            "17_QUADRADO",
+            "18_QUADRADO PEQUENO",
+            "19_ALVO",
+            "20_BONEQUINHO",
+            "21_COELHO",
+            "22_VACA",
+            "23_PATINS",
+            "24_CASA",
+            "25_COBRA",
+            "26_SETA - NORTE",
+            "27_SETA - NORDESTE",
+            "28_SETA - LESTE",
+            "29_SETA - SUDESTE",
+            "30_SETA - SUL",
+            "31_SETA - SUDOESTE",
+            "32_SETA - OESTE",
+            "33_SETA - NOROESTE"
+	    ],
+        "pins": [
+            "0",
+	        "1",
+	        "2"
+        ],
+        "val": [
+            "0",
+	        "1"
+        ] 
+    }
+}
