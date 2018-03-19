@@ -131,7 +131,7 @@ class S2M:
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 2.1  Copyright(C) 2018 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 2.2  Copyright(C) 2018 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -313,6 +313,10 @@ class S2M:
             self.scratch_project = self.base_path + "/scratch_files/projects/motion_tw.sb2"
         elif self.language == 'tws':
             self.scratch_project = self.base_path + "/scratch_files/projects/motion_tw.sb2"
+        elif self.language == '5':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ptbr.sb2"
+        elif self.language == 'ptbr':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_ptbr.sb2"
 
         exec_string = self.scratch_executable + ' ' + self.scratch_project
 
@@ -551,7 +555,8 @@ def main():
     parser.add_argument("-l", dest="language", default="0",
                         help="Select Language: \n0 = English(default)\n1 or ja = Japanese\n" \
                              "2 or ko = Korean\n3 or tw = Traditional Chinese" \
-                             "\n4 or tws = Traditional Chinese Sample Project")
+                             "\n4 or tws = Traditional Chinese Sample Project" \
+                             "\n5 or ptbr = Brazilian Portuguese")
     parser.add_argument("-p", dest="comport", default="None", help="micro:bit COM port - e.g. /dev/ttyACMO or COM3")
     parser.add_argument("-r", dest="rpi", default="None", help="Set to TRUE to run on a Raspberry Pi")
     parser.add_argument("-s", dest="scratch_exec", default="default", help="Full path to Scratch executable")
@@ -574,7 +579,7 @@ def main():
     else:
         comport = args.comport
 
-    valid_languages = ['0', '1', 'ja', '2', 'ko', '3', 'tw', '4', 'tws']
+    valid_languages = ['0', '1', 'ja', '2', 'ko', '3', 'tw', '4', 'tws', '5', 'ptbr']
     lang = args.language
 
     if lang not in valid_languages:
