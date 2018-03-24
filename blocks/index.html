@@ -205,6 +205,9 @@ If you enter a value greater than 9 for the intensity parameter, the value  used
 <p><img align="center" src="../images/clear_display_block.png"></p>
 <h2 id="digital-write">Digital Write</h2>
 <p>This command block allows you to set pins 0, 1, or 2 to a value of 0 or 1.</p>
+<p>Once this block is used to set a digital output value for the selected pin, the pin mode is fixed
+as a digital output. As a result the <em>Read Digital</em> block for this pin will return a zero, until the
+micro:bit is reset.</p>
 <p><img align="center" src="../images/digital_write_block.png"></p>
 <h2 id="analog-write">Analog Write</h2>
 <p>This command block allows you to set pins 0, 1, or 2 to a value of 0 to 1023.</p>
@@ -234,6 +237,8 @@ to "see" the shaken event.</p>
 <h2 id="read-digital">Read Digital</h2>
 <p>This reporter block returns the current digital value for pins 0, 1, or 2. Either a value of 0 or
 1 is returned.</p>
+<p>If a <em>Digital Write</em> block was previously used for the pin selected, a zero will always be returned until
+the micro:bit is reset. Once reset, the pin may then be used as input pin.</p>
 <p><img align="center" src="../images/digital_read_block.png"></p>
 <h2 id="read-analog">Read Analog</h2>
 <p>This reporter block returns the current analog value for pins 0, 1, or 2. A value between 0 and 
