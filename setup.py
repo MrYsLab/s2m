@@ -1,8 +1,11 @@
 from setuptools import setup
 
+with open('README.md') as f:
+    long_description = f.read()
+
 setup(
     name='s2m',
-    version='2.3',
+    version='2.4',
     packages=['s2m'],
     install_requires=['pyserial>=2.7',
                       'psutil'],
@@ -20,6 +23,8 @@ setup(
     author='Alan Yorinks',
     author_email='MisterYsLab@gmail.com',
     description='A Scratch 2.0 (Offline) Hardware Extension for micro:bit',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     keywords=['micro:bit', 'microbit', 'Scratch'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
