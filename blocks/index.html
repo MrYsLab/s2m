@@ -208,9 +208,14 @@ If you enter a value greater than 9 for the intensity parameter, the value  used
 <p>Once this block is used to set a digital output value for the selected pin, the pin mode is fixed
 as a digital output. As a result the <em>Read Digital</em> block for this pin will return a zero, until the
 micro:bit is reset.</p>
+<p>If you wish to follow a digital write by an analog write for a given pin, you should first issue a digital write for the
+selected pin with a value of 0.</p>
 <p><img align="center" src="../images/digital_write_block.png"></p>
 <h2 id="analog-write">Analog Write</h2>
 <p>This command block allows you to set pins 0, 1, or 2 to a value of 0 to 1023.</p>
+<p>Once this block is used to perform an analog write for the selected pin, the pin mode is fixed
+as an analog output. As a result the <em>Read Analog</em> block for this pin will return a zero, until the
+micro:bit is reset.</p>
 <p>If you enter a value that is out of range, the value will silently be set to 256 internally.
 Please note,
 that the value will not be updated in the block because Scratch does not provide a programmatic way to do so.</p>
