@@ -1,5 +1,5 @@
 """
- Copyright (c) 2017 Alan Yorinks All rights reserved.
+ Copyright (c) 2017-2018 Alan Yorinks All rights reserved.
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -14,7 +14,7 @@
  along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
- Last modified 24 March 2018
+ Last modified 5 April 2018
 """
 
 from microbit import *
@@ -156,6 +156,7 @@ def loop(digital_outputs):
                 try:
                     pin = int(cmd_list[1])
                     value = int(cmd_list[2])
+                    digital_outputs[pin] = True
                 except IndexError:
                     continue
                 except ValueError:
@@ -229,16 +230,19 @@ def loop(digital_outputs):
                     sensor_string += '0' + ','
 
                 # get analog input pin values
-                sensor_string += str(pin0.read_analog()) + ','
+                if not digital_outputs[0]:
+                    sensor_string += str(pin0.read_analog()) + ','
 
-                sensor_string += str(pin1.read_analog()) + ','
+                if not digital_outputs[1]:
+                    sensor_string += str(pin1.read_analog()) + ','
 
-                sensor_string += str(pin2.read_analog())
+                if not digital_outputs[2]:
+                    sensor_string += str(pin2.read_analog())
 
                 print(sensor_string)
 
             elif cmd == 'v':
-                print('s2mb.py Version 1.07 24 March 2018')
+                print('s2mb.py Version 1.08 5 April 2018')
             else:
                 continue
 

@@ -1,11 +1,11 @@
 from setuptools import setup
 
-with open('README.md') as f:
+with open('long_desc.md') as f:
     long_description = f.read()
 
 setup(
     name='s2m',
-    version='2.4',
+    version='2.5',
     packages=['s2m'],
     install_requires=['pyserial>=2.7',
                       'psutil'],
