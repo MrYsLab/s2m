@@ -45,7 +45,7 @@ IF EXIST %s2m% (
     @ECHO **** Found installed s2m at %s2m% ****
 ) ELSE (
     @ECHO **** s2m not found! Install s2m and uflash from PyPI. ****
-    %py3_base%\Scripts\pip.exe install --user --upgrade s2m==2.4
+    %py3_base%\Scripts\pip.exe install --user --upgrade s2m
     %py3_base%\Scripts\pip.exe install --user --upgrade uflash
     
     @ECHO **** Upload the s2m program to your Micro:Bit ****
@@ -54,10 +54,10 @@ IF EXIST %s2m% (
 
 REM Auto launch s2m and Scratch2
 IF EXIST  "%ProgramFiles(x86)%\Scratch 2\Scratch 2.exe" (
-    %s2m% -l tw -b %s2m_base% -s "%ProgramFiles(x86)%\Scratch 2\Scratch 2.exe"
+    %s2m% -b %s2m_base% -s "%ProgramFiles(x86)%\Scratch 2\Scratch 2.exe"
 )
 ELSE (
-    %s2m% -l tw -b %s2m_base% -s "%ProgramFiles%\Scratch 2\Scratch 2.exe"
+    %s2m% -b %s2m_base% -s "%ProgramFiles%\Scratch 2\Scratch 2.exe"
 )
 
 ENDLOCAL
