@@ -13,7 +13,7 @@ s2m_base="${USER_SITE}/s2m"
 if [ ! -f "$s2m" ]; then
 	pip install --user --upgrade s2m
 	pip install --user --upgrade uflash
-	${uflash} "${s2m_mb}"
+	"${uflash}" "${s2m_mb}"
 fi
 
 # scratch2 path
@@ -26,8 +26,8 @@ if [ -f "/usr/local/bin/scratch2" ]; then
 fi
 
 if [ -f "/opt/Scratch 2/bin/Scratch 2" ]; then
-	scratch2="/opt/Scratch 2/bin/Scratch 2"
+	scratch2='/opt/Scratch\ 2/bin/Scratch\ 2'
 fi
 
 # launch s2m
-${s2m} -b "${s2m_base}" -s "${scratch2}"
+"${s2m}" -b "${s2m_base}" -s "${scratch2}"
