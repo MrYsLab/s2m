@@ -6,7 +6,7 @@ USER_SITE=$( python -m site | grep USER_SITE | grep -oP "(?<=')[^']+(?=')" )
 
 s2m="${USER_BASE}/bin/s2m"
 uflash="${USER_BASE}/bin/uflash"
-s2m_mb="${USER_SITE}/s2m/micro_bit_scripts/2mb_min.py"
+s2m_mb="${USER_SITE}/s2m/micro_bit_scripts/s2mb_min.py"
 s2m_base="${USER_SITE}/s2m"
 
 # install and upload firmware
