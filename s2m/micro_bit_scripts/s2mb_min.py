@@ -95,7 +95,6 @@ def loop(digital_outputs):
      pin=int(cmd_list[1])
      value=int(cmd_list[2])
      digital_outputs[pin]=True
-     print(str(digital_outputs))
     except IndexError:
      continue
     except ValueError:
@@ -137,7 +136,7 @@ def loop(digital_outputs):
      sensor_string+=str(pin2.read_analog())
     print(sensor_string)
    elif cmd=='v':
-    print('s2mb.py Version 1.08 5 April 2018')
+    print('s2mb.py Version 1.09 13 April 2018')
    else:
     continue
 loop([False,False,False])
