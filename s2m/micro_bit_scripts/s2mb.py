@@ -38,7 +38,8 @@ from microbit import *
 
 
 # a list of current digital pin modes
-def loop(digital_outputs):
+def loop():
+    digital_outputs = [False, False, False]
     while True:
         data = uart.readline()
         sleep(8)
@@ -231,19 +232,28 @@ def loop(digital_outputs):
                 # get analog input pin values
                 if not digital_outputs[0]:
                     sensor_string += str(pin0.read_analog()) + ','
+                else:
+                    sensor_string += '0' + ','
 
                 if not digital_outputs[1]:
                     sensor_string += str(pin1.read_analog()) + ','
+                else:
+                    sensor_string += '0' + ','
 
                 if not digital_outputs[2]:
                     sensor_string += str(pin2.read_analog())
+                else:
+                    sensor_string += '0' + ','
 
                 print(sensor_string)
+                sleep(10)
+
 
             elif cmd == 'v':
-                print('s2mb.py Version 1.09 12 April 2018')
+                print('s2mb.py Version 1.10 14 April 2018')
             else:
                 continue
+        sleep(8)
 
 
-loop([False, False, False])
+loop()

@@ -131,7 +131,7 @@ class S2M:
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 2.5  Copyright(C) 2018 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 2.6  Copyright(C) 2018 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -349,7 +349,7 @@ class S2M:
         reply = resp.split(',')
 
         # if this reply is not the correct length, just toss it.
-        if len(reply) != 11:
+        if len(reply) > 12:
             return ''
 
         resp = self.build_poll_response(reply)
@@ -418,17 +418,17 @@ class S2M:
         """
 
         # set all digital and analog outputs to zero
-        self.send_command('t,0,0')
-        self.send_command('t,1,0')
-        self.send_command('t,2,0')
+        # self.send_command('t,0,0')
+        # self.send_command('t,1,0')
+        # self.send_command('t,2,0')
 
-        self.send_command('a,0,0')
-        self.send_command('a,1,0')
-        self.send_command('a,2,0')
+        # self.send_command('a,0,0')
+        # self.send_command('a,1,0')
+        # self.send_command('a,2,0')
 
         # clear the display
 
-        self.send_command('c')
+        # self.send_command('c')
 
     def build_poll_response(self, data_list):
         """
