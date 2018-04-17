@@ -21,7 +21,8 @@ __MAJOR FEATURES__
 
 * English, [Brazilian-Portuguese](https://mryslab.github.io/s2m/blocks/#the-brazilian-portuguese-blocks), 
 [Japanese](https://mryslab.github.io/s2m/blocks/#the-japanese-blocks),
-[Korean](https://mryslab.github.io/s2m/blocks/#the-korean-blocks), and 
+[Korean](https://mryslab.github.io/s2m/blocks/#the-korean-blocks),
+[Spanish](https://mryslab.github.io/s2m/blocks/#the-spanish-blocks) and
 [Traditional (tw) Chinese](https://mryslab.github.io/s2m/blocks/#the-traditional-chinese-tw-blocks) 
 blocks are available for use.
 

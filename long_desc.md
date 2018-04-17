@@ -20,6 +20,7 @@ Scratch blocks are provided for the following languages:
 * Brazilian-Portuguese
 * Japanese
 * Korean
+* Spanish
 * Traditional Chinese (Taiwanese)
 
 
