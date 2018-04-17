@@ -1,0 +1,139 @@
+{
+    "extensionName": "s2m",
+    "extensionPort": 50209,
+    "url": "https://mryslab.github.io/s2m/",
+    "blockSpecs": [
+        [
+            " ",
+            "Muestra imagen %m.images",
+	        "display_image",
+	        "01_FELIZ"
+        ],
+        [
+            " ",
+            "Texto Rotatorio %s",
+            "scroll",
+            "Hello!"
+        ],
+        [
+            " ",
+            "Enciende Píxel X %n Y %n con intensidad %n",
+            "write_pixel",
+            "0",
+            "0",
+            "9"
+        ],
+        [
+            " ",
+            "Borra Pantalla",
+            "display_clear"
+        ],
+        [
+            " ",
+            "Escribe en Pin digital %m.pins el valor %m.val",
+            "digital_write",
+            "0",
+            "0"
+        ],
+        [
+            " ",
+            "Escribe en Pin analógico %m.pins el valor %n",
+            "analog_write",
+            "0",
+            "0"
+        ],
+        [
+            "b",
+            "¿Botón A presionado?",
+            "button_a_pressed"
+        ],
+        [
+            "b",
+            "¿Botón B presionado?",
+            "button_b_pressed"
+        ],
+        [
+            "b",
+            "¿Inclinado hacia la derecha?",
+            "tilted_right"
+        ],
+        [
+            "b",
+            "¿Inclinado hacia la izquierda?",
+            "tilted_left"
+        ],
+        [
+            "b",
+            "¿Inclinado hacia arriba?",
+            "tilted_up"
+        ],
+        [
+            "b",
+            "¿Inclindado hacia abajo?",
+            "tilted_down"
+        ],
+        [
+            "b",
+            "¿Agitado?",
+            "shaken"
+        ],
+        [
+            "r",
+            "Lee el Pin digital %m.pins",
+            "digital_read",
+            "0"
+        ],
+        [
+            "r",
+            "Lee el Pin analógico %m.pins",
+            "analog_read",
+            "0"
+        ]
+    ],
+    "menus": {
+	"images": [
+            "01_FELIZ",
+            "02_TRISTE",
+            "03_ENFADADO",
+            "04_SONRISA",
+            "05_CORAZON",
+            "06_CONFUNDIDO",
+            "07_DORMIDO",
+            "08_SORPRENDIDO",
+            "09_TONTO",
+            "10_FABULOSO",
+            "11_MEH",
+            "12_SI",
+            "13_NO",
+            "14_TRIANGULO",
+            "15_DIAMANTE",
+            "16_DIAMANTE_PEQUEÑO",
+            "17_CUADRADO",
+            "18_CUADRADO_PEQUEÑO",
+            "19_DIANA",
+            "20_PALO",
+            "21_CONEJO",
+            "22_VACA",
+            "23_MONOPATIN",
+            "24_CASA",
+            "25_SERPIENTE",
+            "26_FLECHA_NORTE",
+            "27_FLECHA_NORESTE",
+            "28_FLECHA_ESTE",
+            "29_FLECHA_SUDESTE",
+            "30_FLECHA_SUR",
+            "31_FLECHA_SUDOESTE",
+            "32_FLECHA_OESTE",
+            "33_FLECHA_NOROESTE"
+	    ],
+        "pins": [
+            "0",
+	        "1",
+	        "2"
+        ],
+        "val": [
+            "0",
+	        "1"
+        ] 
+    }
+}
