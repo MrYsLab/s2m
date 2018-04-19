@@ -1,5 +1,5 @@
 {
-    "extensionName": "s2m",
+    "extensionName": "s2m_es",
     "extensionPort": 50209,
     "url": "https://mryslab.github.io/s2m/",
     "blockSpecs": [
