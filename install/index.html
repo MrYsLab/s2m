@@ -170,23 +170,9 @@ for your system.</p>
 You may also find the script <a href="https://github.com/MrYsLab/s2m/blob/master/s2m/micro_bit_scripts/s2mb_min.py">here</a>.
 This is a "minified" version of the script.</p>
 <p>To see a fully commented version of the script, click on this <a href="https://github.com/MrYsLab/s2m/blob/master/s2m/micro_bit_scripts/s2mb.py">link</a>.</p>
-<pre><code>&quot;&quot;&quot;
- Copyright (c) 2017 Alan Yorinks All rights reserved.
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
- Version 3 as published by the Free Software Foundation; either
- or (at your option) any later version.
- This library is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- General Public License for more details.
- You should have received a copy of the GNU AFFERO GENERAL PUBLIC LICENSE
- along with this library; if not, write to the Free Software
- Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- Last modified 24 March 2018
-&quot;&quot;&quot;
-from microbit import*
-def loop(digital_outputs):
+<pre><code>from microbit import*
+def loop():
+ digital_outputs=[False,False,False]
  while True:
   data=uart.readline()
   sleep(8)
@@ -248,6 +234,7 @@ def loop(digital_outputs):
     try:
      pin=int(cmd_list[1])
      value=int(cmd_list[2])
+     digital_outputs[pin]=True
     except IndexError:
      continue
     except ValueError:
@@ -266,7 +253,6 @@ def loop(digital_outputs):
      pin=int(cmd_list[1])
      value=int(cmd_list[2])
      digital_outputs[pin]=True
-     print(str(digital_outputs))
     except IndexError:
      continue
     except ValueError:
@@ -300,17 +286,26 @@ def loop(digital_outputs):
      sensor_string+=str(pin2.read_digital())+','
     else:
      sensor_string+='0'+','
-    sensor_string+=str(pin0.read_analog())+','
-    sensor_string+=str(pin1.read_analog())+','
-    sensor_string+=str(pin2.read_analog())
+    if not digital_outputs[0]:
+     sensor_string+=str(pin0.read_analog())+','
+    else:
+     sensor_string+='0'+','
+    if not digital_outputs[1]:
+     sensor_string+=str(pin1.read_analog())+','
+    else:
+     sensor_string+='0'+','
+    if not digital_outputs[2]:
+     sensor_string+=str(pin2.read_analog())
+    else:
+     sensor_string+='0'+','
     print(sensor_string)
+    sleep(10)
    elif cmd=='v':
-    print('s2mb.py Version 1.07 24 March 2018')
+    print('s2mb.py Version 1.10 14 April 2018')
    else:
     continue
-loop([False,False,False])
-# Created by pyminifier (https://github.com/liftoff/pyminifier)
-
+  sleep(8)
+loop()
 
 
 </code></pre>
