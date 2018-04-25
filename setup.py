@@ -5,7 +5,7 @@ with open('long_desc.md') as f:
 
 setup(
     name='s2m',
-    version='2.8',
+    version='2.9',
     packages=['s2m'],
     install_requires=['pyserial>=2.7',
                       'psutil'],

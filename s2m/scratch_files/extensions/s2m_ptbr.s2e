@@ -11,7 +11,7 @@
         ],
         [
             " ",
-            "Mostrar Texto %s",
+            "Mostrar texto %s",
             "scroll",
             "OLA!"
         ],
@@ -30,14 +30,14 @@
         ],
         [
             " ",
-            "Pino Digital %m.pins com Valor %m.val",
+            "Pino digital %m.pins com valor %m.val",
             "digital_write",
             "0",
             "0"
         ],
         [
             " ",
-            "Pino Analógico%m.pins com Value %n",
+            "Pino analógico%m.pins com valor %n",
             "analog_write",
             "0",
             "0"
@@ -85,7 +85,7 @@
         ],
         [
             "r",
-            "Ler Pino Analógico %m.pins",
+            "Ler pino analógico %m.pins",
             "analog_read",
             "0"
         ]
