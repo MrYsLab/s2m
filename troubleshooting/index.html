@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>How s2m Works - s2m</title>
+  <title>Troubleshooting - s2m</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "How s2m Works";
-    var mkdocs_page_input_path = "s2m.md";
-    var mkdocs_page_url = "/s2m/";
+    var mkdocs_page_name = "Troubleshooting";
+    var mkdocs_page_input_path = "troubleshooting.md";
+    var mkdocs_page_url = "/troubleshooting/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -72,33 +72,20 @@
     <a class="" href="../translation/">Translating The s2m Blocks To A Language Other Than English</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../s2m/">How s2m Works</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">How s2m Works</a>
+    <a class="current" href="./">Troubleshooting</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#the-s2m-architecture">The s2m Architecture</a></li>
-    
-
-    <li class="toctree-l2"><a href="#s2m-consists-of-3-major-components">s2m consists of 3 major components:</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#an-http-server">An HTTP Server</a></li>
-        
-            <li><a class="toctree-l3" href="#protocol-translator">Protocol Translator</a></li>
-        
-            <li><a class="toctree-l3" href="#the-serial-interface">The Serial Interface</a></li>
-        
-        </ul>
+    <li class="toctree-l2"><a href="#troubleshooting-s2m">Troubleshooting s2m</a></li>
     
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../troubleshooting/">Troubleshooting</a>
 	    </li>
           
         </ul>
@@ -123,7 +110,7 @@
     
       
     
-    <li>How s2m Works</li>
+    <li>Troubleshooting</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -133,25 +120,27 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="the-s2m-architecture">The <strong><em>s2m</em></strong> Architecture</h1>
-<p><img align="center" src="../images/architecture.png"></p>
-<h1 id="s2m-consists-of-3-major-components">s2m consists of 3 major components:</h1>
-<h2 id="an-http-server">An HTTP Server</h2>
-<p>When a Scratch command block is executed, Scratch generates an HTTP message that is
-sent to the <strong><em>s2m</em></strong> HTTP server. The message identifies the block type and provides any
-data that the user may have entered into the block's fields. Reporting block
-information is formatted by <strong><em>s2m</em></strong> into HTTP messages and are sent to Scratch and made
-available to the user.</p>
-<p>A copy of the Scratch 2.0 HTTP Extension specification is available <a href="https://wiki.scratch.mit.edu/w/images/ExtensionsDoc.HTTP-9-11.pdf">here</a>.</p>
-<h2 id="protocol-translator">Protocol Translator</h2>
-<p>The micro:bit does not understand HTTP, so the Scratch HTTP messaging must be translated into data
-that the micro:bit can understand and process. When the micro:bit wants to send reporter data,
-such as button presses, it does so using the protocol described by the Python code that was installed
-on micro:bit that supports s2m. This protocol then needs to be translated into HTTP messages so that
-Scratch can process the data coming from the micro:bit.</p>
-<h2 id="the-serial-interface">The Serial Interface</h2>
-<p><strong><em>s2m</em></strong> communicates with the micro:bit over its serial interface. The s2m serial interface
-writes data directly to the micro:bit and reads data from the micro:bit.</p>
+                <h1 id="troubleshooting-s2m">Troubleshooting s2m</h1>
+<p>Here are some common areas to check if s2m is not working as expected.</p>
+<ol>
+<li>
+<p>Startup Problems</p>
+<p>a. Check that your USB cable is plugged into both the micro:bit
+and your computer.</p>
+<p>b. Make sure that you have uploaded the latest copy of s2mb.py to
+the micro:bit. Refer to the <a href="../install/#installing-the-s2m-microbit-script-on-the-microbit">installing s2mb.py</a>
+for details on how to install the script.</p>
+</li>
+<li>
+<p>Connectivity Issues</p>
+<p>a. If you are able to start s2m without issue, but lose connectivity
+while running a Scratch project (the connectivity indicator goes
+from green to red), while in a loop:</p>
+<p><img align="center" src="../images/connectivity_loss.png"></p>
+</li>
+</ol>
+<p>add a small "wait" delay to the loop.</p>
+<p><img align="center" src="../images/loop_delay.png"></p>
               
             </div>
           </div>
@@ -159,10 +148,8 @@ writes data directly to the micro:bit and reads data from the micro:bit.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../troubleshooting/" class="btn btn-neutral float-right" title="Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../translation/" class="btn btn-neutral" title="Translating The s2m Blocks To A Language Other Than English"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../s2m/" class="btn btn-neutral" title="How s2m Works"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -188,10 +175,8 @@ writes data directly to the micro:bit and reads data from the micro:bit.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../translation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../s2m/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../troubleshooting/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
