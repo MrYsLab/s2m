@@ -131,7 +131,7 @@ class S2M:
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 2.9  Copyright(C) 2018 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 2.10 Copyright(C) 2018 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
