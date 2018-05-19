@@ -19,7 +19,8 @@ __MAJOR FEATURES__
 
 * It is a whole lot of fun!
 
-* English, [Brazilian-Portuguese](https://mryslab.github.io/s2m/blocks/#the-brazilian-portuguese-blocks), 
+* English, [Brazilian-Portuguese](https://mryslab.github.io/s2m/blocks/#the-brazilian-portuguese-blocks),
+[Hebrew](https://mryslab.github.io/s2m/blocks/#the-hebrew-blocks),
 [Japanese](https://mryslab.github.io/s2m/blocks/#the-japanese-blocks),
 [Korean](https://mryslab.github.io/s2m/blocks/#the-korean-blocks),
 [Spanish](https://mryslab.github.io/s2m/blocks/#the-spanish-blocks) and
