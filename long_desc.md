@@ -18,6 +18,7 @@ Scratch blocks are provided for the following languages:
 
 * English (default)
 * Brazilian-Portuguese
+* Hebrew
 * Japanese
 * Korean
 * Spanish
