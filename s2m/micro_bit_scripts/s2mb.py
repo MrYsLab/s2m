@@ -34,6 +34,7 @@ from microbit import *
 #   c - clear the display (no parameters)
 #   a - analog write for the specified pin and value (range 0-1023)
 #   t - digital write for the specified pin and value (0 or 1)
+#   g - get sensor values string (fields are comma delimited)
 #   v - get version string
 
 
